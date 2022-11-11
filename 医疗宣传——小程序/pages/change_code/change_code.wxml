@@ -4,7 +4,7 @@
 
   <van-cell-group>
     <van-field style="position: relative; left: 0rpx; top: 114rpx"
-      value="{{ oldPassword }}"
+      model:value="{{ oldPassword }}"
       clearable
       type="password"
       label="旧密码"
@@ -15,7 +15,7 @@
 
   <van-cell-group>
     <van-field style="position: relative; left: 0rpx; top: 176rpx"
-      value="{{ newPassword }}"
+      model:value="{{ newPassword }}"
       clearable
       type="password"
       label="新密码"
@@ -24,14 +24,14 @@
     />
 
     <van-field style="position: relative; left: 0rpx; top: 176rpx"
-      value="{{ confirmedPassword }}"
+      model:value="{{ confirmedPassword }}"
       type="password"
       label="确认新密码"
       placeholder="请再次输入新密码"
     />
   </van-cell-group>
 
-  <van-button round type="default" style="position: relative; left: 287rpx; top: 327rpx">
+  <van-button round type="default" style="position: relative; left: 287rpx; top: 327rpx" >
   确认修改
   </van-button>
 </view>

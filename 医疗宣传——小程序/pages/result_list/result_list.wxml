@@ -1,13 +1,47 @@
-<text class="text" style="position: relative; left: 236rpx; top: 0rpx">检测结果</text>
-<van-search
-  value="{{ value }}"
-  placeholder="请输入搜索关键词"
-  use-action-slot
-  bind:change="onChange"
-  bind:search="onSearch"
->
-  <van-button round type="default" slot="action" bind:tap="onClick" size="small">搜索</van-button>
-</van-search>
-<van-dropdown-menu>
-    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-</van-dropdown-menu>  
+<view style="position: relative; width: 750rpx; background: #F8F8F8; height: 1444rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+    <text class="text" style="position: relative; left: 236rpx; top: 0rpx">检测结果</text>
+    <van-search
+      value="{{ value }}"
+      placeholder="请输入搜索关键词"
+      use-action-slot
+      bind:change="onChange"
+      bind:search="onSearch"
+    >
+      <van-button round type="default" slot="action" bind:tap="onClick" size="small">搜索</van-button>
+    </van-search>
+    <van-dropdown-menu>
+        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    </van-dropdown-menu>  
+
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
+        <van-cell center clickable title="检测结果1" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
+        <van-cell center clickable title="检测结果2" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
+        <van-cell center cilckable title="检测结果3" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
+        <van-cell center cilckable title="检测结果4" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 300rpx">
+        <van-cell center clickable title="检测结果1" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 350rpx">
+        <van-cell center clickable title="检测结果2" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 400rpx">
+        <van-cell center cilckable title="检测结果3" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 450rpx">
+        <van-cell center cilckable title="检测结果4" is-link size="large" bindtap="toResult"/>
+      </van-cell-group>
+</view>

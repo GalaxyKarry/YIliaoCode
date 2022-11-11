@@ -1,2 +1,18 @@
-<!--pages/result/result.wxml-->
-<text>pages/result/result.wxml</text>
+<view style="position: relative; width: 750rpx; background: #F8F8F8; height: 1444rpx; display: block; box-sizing: border-box; left: 1rpx; top: 0rpx">
+  <van-circle style="position: relative; left: 196rpx; top: 122rpx" value="{{ 100 }}" stroke-width="6" size="180" color="#8BC34A">
+    <text class="result" style="position: relative; left: 30rpx; top: -46rpx">合格</text>
+    <text class="score" style="position: relative; left: -70rpx; top: 71rpx">88</text>
+  </van-circle>
+  <text class="title" style="position: relative; left: -286rpx; top: 225rpx">检测id：</text>
+  <text class="title" style="position: relative; left: -445rpx; top: 351rpx">检测时间：</text>
+  <text class="title"  style="position: relative; left: 74rpx; top: 424rpx">建议：</text>
+  <text class="title" style="position: relative; left: -46rpx; top: 572rpx">相关视频：</text>
+  
+
+  <text class="content" style="position: relative; left: -46rpx; top: 175rpx">小野宝宝</text>
+  <text class="content" style="position: relative; left: -191rpx; top: 299rpx">2022年11月11日</text>
+  <text class="content" style="position: relative; left: 594rpx; top: 250rpx">18点30分</text>
+  <text class="content" style="position: relative; left: 118rpx; top: 377rpx">您做的很好，继续努力</text>
+  
+</view>
+
