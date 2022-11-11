@@ -1,0 +1,42 @@
+/**index.wxss**/
+page{
+  background-color: #EBEBE3;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.name{
+  /* 字体大小 */
+  font-size: 35px;
+  /* 字体颜色 */
+  color: black;
+  /* 字体风格-粗细 */
+  font-weight: normal;
+}
+.view{
+	border-radius: 30rpx;
+  padding: 10rpx;
+}
+.tele{
+  /* 字体大小 */
+  font-size: 15px;
+  /* 字体颜色 */
+  color: black;
+  /* 字体风格-粗细 */
+  font-weight: 100;
+}
