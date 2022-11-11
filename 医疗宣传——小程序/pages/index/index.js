@@ -44,5 +44,29 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  post_results:function()
+  {
+    wx.navigateTo({
+      url: '/pages/result_list/result_list',
+    })
+  },
+  post_input_face:function()
+  {
+    wx.navigateTo({
+      url: '/pages/input_face/input_face',
+    })
+  },
+  post_change_code:function()
+  {
+    wx.navigateTo({
+      url: '/pages/change_code/change_code',
+    })
+  },
+  post_report:function()
+  {
+    wx.navigateTo({
+      url: '/pages/report/report',
+    })
   }
 })

@@ -13,29 +13,22 @@
   <van-icon style="position: relative; left: 432rpx; top: -82rpx" name="closed-eye" size="20"/>
   
   <view class="view" style="position: relative; width: 752rpx; background: #F8F8F4; height: 994rpx; display: block; box-sizing: border-box; left: -2rpx; top: -36rpx">
-    <navigator url="/pages/result_list/result_list" hover-class="none">
-      <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
-        <van-cell center clickable title="检测结果" is-link icon="completed" size="large"/>
-      </van-cell-group>
-    </navigator>
-
-    <navigator url="/pages/input_face/input_face" hover-class="none">
-      <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
-        <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large"/>
-      </van-cell-group>
-    </navigator>
-
-    <navigator url="/pages/change_code/change_code" hover-class="none">
-      <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
-        <van-cell center cilckable title="修改密码" is-link icon="edit" size="large"/>
-      </van-cell-group>
-    </navigator>
     
-    <navigator url="/pages/report/report" hover-class="none">
-      <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
-        <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large"/>
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
+        <van-cell center clickable title="检测结果" is-link icon="completed" size="large" bindtap="post_results"/>
       </van-cell-group>
-    </navigator>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
+        <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large" bindtap="post_input_face"/>
+      </van-cell-group>
+
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
+        <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" bindtap="post_change_code"/>
+      </van-cell-group>
+    
+      <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
+        <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large" bindtap="post_report"/>
+      </van-cell-group>
     
   </view>
 
