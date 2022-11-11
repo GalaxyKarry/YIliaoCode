@@ -1,1 +1,9 @@
 /* pages/change_code/change_code.wxss */
+.text{
+  /* 字体大小 */
+  font-size: 35px;
+  /* 字体颜色 */
+  color: black;
+  /* 字体风格-粗细 */
+  font-weight: normal;
+}

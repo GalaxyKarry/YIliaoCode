@@ -1,2 +1,38 @@
-<!--pages/change_code/change_code.wxml-->
-<text>pages/change_code/change_code.wxml</text>
+
+<view style="position: relative; width: 750rpx; background: #F8F8F8; height: 1444rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+  <text class="text" style="position: relative; left: 236rpx; top: 0rpx">修改密码</text>
+
+  <van-cell-group>
+    <van-field style="position: relative; left: 0rpx; top: 114rpx"
+      value="{{ oldPassword }}"
+      clearable
+      type="password"
+      label="旧密码"
+      placeholder="请输入旧密码"
+      bind:click-icon="onClickIcon"
+    />
+  </van-cell-group>
+
+  <van-cell-group>
+    <van-field style="position: relative; left: 0rpx; top: 176rpx"
+      value="{{ newPassword }}"
+      clearable
+      type="password"
+      label="新密码"
+      placeholder="请输入新密码"
+      bind:click-icon="onClickIcon"
+    />
+
+    <van-field style="position: relative; left: 0rpx; top: 176rpx"
+      value="{{ confirmedPassword }}"
+      type="password"
+      label="确认新密码"
+      placeholder="请再次输入新密码"
+    />
+  </van-cell-group>
+
+  <van-button round type="default" style="position: relative; left: 287rpx; top: 327rpx">
+  确认修改
+  </van-button>
+</view>
+

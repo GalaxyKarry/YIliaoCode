@@ -1,1 +1,13 @@
-<title>检测列表</title>
+<text class="text" style="position: relative; left: 236rpx; top: 0rpx">检测结果</text>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+>
+  <van-button round type="default" slot="action" bind:tap="onClick" size="small">搜索</van-button>
+</van-search>
+<van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+</van-dropdown-menu>  
