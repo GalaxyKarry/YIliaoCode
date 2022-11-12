@@ -1,7 +1,5 @@
 server:
   port: 8100
 spring:
-#  application:
-#    name: WashHand
-  profiles:
-    active: dev
+  application:
+    name: WashHand

@@ -32,7 +32,6 @@ public class SwaggerConfig {
                 .build();
     }
 
-
     private ApiInfo webApiInfo() {
         return new ApiInfoBuilder()
                 .title("洗手检测API文档")
