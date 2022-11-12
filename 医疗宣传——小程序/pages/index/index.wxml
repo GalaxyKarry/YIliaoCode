@@ -5,32 +5,36 @@
     <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
   </block>
   <block wx:else>
-    <view class="index" style="width: 750rpx; height: 1336rpx; display: block; box-sizing: border-box">
-    <image style="height: 90px; width: 90px; border-radius: 60rpx; overflow: hidden; position: relative; left: 22rpx; top: 90rpx" src="{{userInfo.avatarUrl}}">
-    </image>
-    <text class="name" style="position: relative; left: 58rpx; top: -6rpx">昵称：
-      <text class="name" style="position: relative; left: 354rpx; top: -92rpx">{{userInfo.nickName}}</text>
-    </text>
-    <text class="tele" style="position: relative; left: 50rpx; top: -35rpx">电话：
-      <text class="tele" style="position: relative; left: 372rpx; top: -53rpx">123****4567</text>
-    </text>
-    <van-icon style="position: relative; left: 432rpx; top: -82rpx" name="closed-eye" size="20"/>
-    <view class="view" style="position: relative; width: 752rpx; background: #F8F8F4; height: 994rpx; display: block; box-sizing: border-box; left: -2rpx; top: -36rpx">
+    <view style="width: 750rpx; height: 1336rpx; display: block; box-sizing: border-box">
+    
+    <view class="info">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="text">
+          <text class="name">昵称：{{userInfo.nickName}}</text>
+          <view class="tele">
+            <text>电话：123****4567</text>
+            <van-icon name="closed-eye" size="20"/>
+          </view>
+        </view>
+    </view>
+    
+    <view class="view">
     
     <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
-      <van-cell center clickable title="检测结果" is-link icon="completed" size="large" bindtap="post_results"/>
+      <van-cell center clickable title="检测结果" is-link icon="completed" size="large" url=
+    "/pages/result_list/result_list"/>
     </van-cell-group>
   
     <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
-      <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large" bindtap="post_input_face"/>
+      <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large" url="/pages/input_face/input_face"/>
     </van-cell-group>
 
     <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
-      <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" bindtap="post_change_code"/>
+      <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" url="/pages/change_code/change_code"/>
     </van-cell-group>
   
     <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
-      <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large" bindtap="post_report"/>
+      <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large" url="/pages/report/report"/>
     </van-cell-group>
   
 </view>

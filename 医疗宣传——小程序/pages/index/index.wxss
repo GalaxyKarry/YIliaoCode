@@ -16,27 +16,48 @@ page{
   margin: 20rpx;
   border-radius: 50%;
 }
-
-.usermotto {
-  margin-top: 200px;
-}
-.name{
-  /* 字体大小 */
-  font-size: 35px;
-  /* 字体颜色 */
-  color: black;
-  /* 字体风格-粗细 */
-  font-weight: normal;
-}
 .view{
 	border-radius: 30rpx;
   padding: 10rpx;
+  margin-top: 30rpx;
+  background: #F8F8F4; 
+  height:90%; 
+  display: block; 
+  box-sizing: border-box; 
+  left: -2rpx; 
+  top: -36rpx
 }
-.tele{
-  /* 字体大小 */
-  font-size: 15px;
-  /* 字体颜色 */
+
+.info{
+  display: flex;
+  flex-direction:row;
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+}
+
+.info image{
+  height: 85px; 
+  width: 85px; 
+  border-radius: 60rpx; 
+  overflow: hidden;
+}
+
+.text{
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.name{
+  font-size: 35px;
   color: black;
-  /* 字体风格-粗细 */
+  font-weight: normal;
+  margin-left: 5rpx;
+}
+
+.tele text{
+  font-size: 15px;
+  color: black;
   font-weight: 100;
+  margin-left: 95rpx;
+  margin-bottom: 10rpx;
 }

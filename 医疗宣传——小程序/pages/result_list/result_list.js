@@ -6,7 +6,7 @@ Page({
     ],
     value1: 0,
   },
-  toResult:function(){
+  post_result:function(){
     wx.navigateTo({
       url: '/pages/result/result',
     })
