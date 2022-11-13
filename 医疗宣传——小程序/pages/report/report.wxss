@@ -1,9 +1,28 @@
-/* pages/report/report.wxss */
-.text{
-  /* 字体大小 */
+page{
+  background-color: #F8F8F8;
+  height: 100%;
+}
+.container{
+  display: flex;
+  flex-direction:column;
+}
+.container text{
   font-size: 35px;
-  /* 字体颜色 */
   color: black;
-  /* 字体风格-粗细 */
   font-weight: normal;
+  align-self: center;
+}
+
+.container van-cell-group{
+  margin-top: 100rpx;
+}
+
+.container van-uploader{
+  margin-top: 100rpx;
+  align-self: center;
+}
+
+.container van-button{
+  margin-top: 100rpx;
+  align-self: center;
 }

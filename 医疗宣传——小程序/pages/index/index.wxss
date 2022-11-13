@@ -24,15 +24,13 @@ page{
   height:90%; 
   display: block; 
   box-sizing: border-box; 
-  left: -2rpx; 
-  top: -36rpx
 }
 
 .info{
   display: flex;
   flex-direction:row;
-  margin-top: 20rpx;
-  margin-left: 15rpx;
+  justify-content: space-evenly;
+  padding: 15rpx;
 }
 
 .info image{

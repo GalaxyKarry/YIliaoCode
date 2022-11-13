@@ -1,8 +1,7 @@
-<view style="position: relative; width: 750rpx; background: #F8F8F8; height: 1444rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
-  <text class="text" style="position: relative; left: 305rpx; top: 0rpx">反馈</text>
-
+<view class="container">
+  <text class="text">反馈</text>
   <van-cell-group>
-    <van-field style="position: relative; left: 0rpx; top: 91rpx"
+    <van-field
       value="{{ value }}"
       type="textarea"
       autosize
@@ -11,11 +10,9 @@
       bind:change="onChange"
     />
   </van-cell-group>
-
   <van-uploader>
-    <van-button icon="photo" type="default" style="position: relative; left: 264rpx; top: 410rpx">上传图片</van-button>
+    <van-button icon="photo" type="default">上传图片</van-button>
   </van-uploader>
-
-  <van-button type="default" style="position: relative; left: 69rpx; top: 660rpx">提交反馈</van-button>
+  <van-button type="default">提交反馈</van-button>
 
 </view>
