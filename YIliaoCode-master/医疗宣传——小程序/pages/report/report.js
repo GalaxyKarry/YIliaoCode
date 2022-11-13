@@ -5,14 +5,62 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    cid: "",
+    contect: "",
+    picture: "null",
+    uid: "",
   },
+
+  onChange:function(e){
+    this.setData({
+      contect:e.detail.value
+    });
+    console.log("change contect: ", this.data.contect)
+  },
+
+  record:function(e){
+    
+    wx.request({
+      url: 'http://localhost:8100/feedback/addFeedback/',
+      method: 'POST',
+      header: {
+          "Content-Type": "application/json"
+      },
+      data: {
+        cid: this.data.cid,
+        contect: this.data.contect,
+        picture: this.data.picture,
+        uid: this.data.uid,
+      },
+      success: (res) => {
+          console.log(res.data);
+          // 存放用户基本信息
+          this.setData({
+              userInfo: res.data.userInfo,
+              hasUserInfo: true,
+              canIUse: true
+          })
+      }
+    })
+    console.log(this.data)
+    
+},
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let cid = options.cid
+    let uid = options.uid
+    console.log("options.cid: ", cid)
+    console.log("options.uid: ", uid)
+    this.setData({
+      cid: cid,
+      uid: uid
+    })
+      
+    
   },
 
   /**

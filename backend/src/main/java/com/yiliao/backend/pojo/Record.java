@@ -17,4 +17,5 @@ public class Record {
     private String Time;
     private String Vedio;
     private String Place;
+    private String proposal;
 }

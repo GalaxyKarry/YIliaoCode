@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:getApp().globalData.userInfo,
+    results:getApp().globalData.results,
+  },
+  to_record:function(e){
+    console.log('e.target.dataset.cid---->', e.target.dataset.cid)
+    console.log('e.target.dataset.uid---->', e.target.dataset.uid)
+  
+    wx.navigateTo({
+      url: '/pages/report/report?cid=' + e.target.dataset.cid + '&uid=' + e.target.dataset.uid,
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad(option) {
+    let index = option.index
+    console.log("index: ", index)
+    console.log(getApp().globalData.results[index])
+    this.setData({
+      userInfo:getApp().globalData.userInfo,
+      results: getApp().globalData.results[index]
+    })
   },
 
   /**

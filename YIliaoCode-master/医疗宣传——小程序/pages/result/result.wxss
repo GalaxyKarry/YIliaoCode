@@ -1,36 +1,56 @@
-/* pages/result/result.wxss */
-.result{
-  /* 字体大小 */
+.container{
+  height: 1700rpx;
+  background: #F8F8F8; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container video{
+  margin-top: 50rpx;
+}
+
+.outcome{
+  border: #8BC34A solid 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350rpx;
+  width: 350rpx;
+  border-radius: 500rpx;
+}
+.outcome .result{
   font-size: 35px;
-  /* 字体颜色 */
   color: #8BC34A;
-  /* 字体风格-粗细 */
-  font-weight: normal;
+  font-weight: bold;
 }
-.score
-{
-  /* 字体大小 */
+.outcome .score{
   font-size: 25px;
-  /* 字体颜色 */
   color: #8BC34A;
-  /* 字体风格-粗细 */
-  font-weight: normal;
+  font-weight: bold;
 }
-.title
-{
-  /* 字体大小 */
+
+.info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 150rpx;
+  margin-bottom: 100rpx;
+}
+.info .item{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  margin: 15rpx;
+}
+.item .title{
   font-size: 20px;
-  /* 字体颜色 */
   color: black;
-  /* 字体风格-粗细 */
   font-weight: bolder;
 }
-.content
-{
-  /* 字体大小 */
+.item .content{
   font-size: 18px;
-  /* 字体颜色 */
   color: black;
-  /* 字体风格-粗细 */
   font-weight: normal;
 }

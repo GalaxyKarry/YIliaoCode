@@ -1,21 +1,35 @@
-<view style="position: relative; width: 748rpx; background: #F8F8F8; height: 2402rpx; display: block; box-sizing: border-box; left: 1rpx; top: 0rpx">
-  <van-circle style="position: relative; left: 196rpx; top: 122rpx" value="{{ 100 }}" stroke-width="6" size="180" color="#8BC34A">
-    <text class="result" style="position: relative; left: 30rpx; top: -46rpx">合格</text>
-    <text class="score" style="position: relative; left: -70rpx; top: 71rpx">88</text>
-  </van-circle>
-  <text class="title" style="position: relative; left: -323rpx; top: 226rpx">检测id：</text>
-  <text class="title" style="position: relative; left: -481rpx; top: 351rpx">检测时间：</text>
-  <text class="title"  style="position: relative; left: 39rpx; top: 424rpx">建议：</text>
-  <text class="title" style="position: relative; left: -82rpx; top: 572rpx">相关视频：</text>
-  
+<view class="container">
+  <view class="outcome" wx:if="{{results.pass==0}}">
+    <text class="result">合格</text>
+    <!-- <text class="score">fenshu:{{ results.pass }}</text> -->
+  </view>
+  <view class="outcome" wx:if="{{results.pass==1}}">
+    <text class="result">不合格</text>
+    <!-- <text class="score">fenshu:{{ results.pass }}</text> -->
+  </view>
+  <view class="info">
+    <view class="item">
+      <text class="title">检测id：</text>
+      <text class="content">{{userInfo.nickName}}</text>
+    </view>
 
-  <text class="content" style="position: relative; left: -88rpx; top: 175rpx">小野宝宝</text>
-  <text class="content" style="position: relative; left: -232rpx; top: 300rpx">2022年11月11日</text>
-  <text class="content" style="position: relative; left: 556rpx; top: 251rpx">18点30分</text>
-  <text class="content" style="position: relative; left: 76rpx; top: 377rpx">您做的很好，继续努力</text>
+    <view class="item">
+      <text class="title">检测时间：</text>
+      <text class="content">{{ results.time }}</text>
+    </view>
+
+    <view class="item">
+      <text class="title">建议：</text>
+      <text class="content">{{ results.proposal }}</text>
+    </view>
+
+    <view class="item">
+      <text class="title">相关视频：</text>
+    </view>
+  </view>
+  <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" autoplay="{{true}}" muted="{{true}}"/>
   
-  <video src="../../rsc/1_l.mp4" autoplay="{{true}}" muted="{{true}}" style="position: relative; left: 74rpx; top: 588rpx"></video>
-  <video src="../../rsc/1_u.mp4" autoplay="{{true}}" muted="{{true}}" style="position: relative; left: 76rpx; top: 650rpx"></video>
-  <video src="../../rsc/1_r.mp4" autoplay="{{true}}" muted="{{true}}" style="position: relative; left: 76rpx; top: 708rpx"></video>
+  <van-button type="primary" bindtap="to_record" data-cid="{{ results.cid }} " data-uid="{{ results.uid }}">反馈</van-button>
+  
 </view>
 

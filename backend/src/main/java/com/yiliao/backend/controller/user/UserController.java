@@ -64,10 +64,10 @@ public class UserController {
     }
 
 
-    @PostMapping("/updatePassWord2")
-    public String updatePassWord2(@RequestBody User user) {
-        userMapper.updateById(user);
-        return "Update Successfully";
-    }
+//    @PostMapping("/updatePassWord2")
+//    public String updatePassWord2(@RequestBody User user) {
+//        userMapper.updateById(user);
+//        return "Update Successfully";
+//    }
 
 }

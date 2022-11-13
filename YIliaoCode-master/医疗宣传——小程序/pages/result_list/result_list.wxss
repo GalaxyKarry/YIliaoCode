@@ -22,7 +22,7 @@
 }
 .result-list{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -33,11 +33,21 @@
   border-radius: 30rpx;
   width: 85%;
   border: solid #38C0AA;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.result text{
-  font-size: 20px;
-  font-weight: normal;
-}
+
 .result van-icon{
   margin-left: 65%;
+}
+.mid{
+  display: flex;
+  flex-direction: column;
+}
+.text1{
+  color: #38C0AA;
+  font-size: large;
+  font-weight: bold;
 }

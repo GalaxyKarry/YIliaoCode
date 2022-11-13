@@ -30,7 +30,14 @@ public class RecordController {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("Uname", name);
         User res = userMapper.selectOne(queryWrapper);
+        if(res == null){
+            try {
+                throw new Exception();
+            }
+            catch (Exception e) {
 
+            }
+        }
         QueryWrapper<Record> queryWrapper_records = new QueryWrapper<>();
         queryWrapper_records.eq("UID", res.getUID());
         return recordMapper.selectList(queryWrapper_records);

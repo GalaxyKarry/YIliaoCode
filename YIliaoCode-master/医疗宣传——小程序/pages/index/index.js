@@ -1,7 +1,6 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -23,6 +22,7 @@ Page({
         canIUseGetUserProfile: true
       })
     }
+    
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -33,6 +33,18 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
+        })
+        getApp().globalData.userInfo=res.userInfo
+        wx.request({
+          url: 'http://localhost:8100/record/getDetectListById/'+res.userInfo.nickName,
+          method:'GET',
+          success:function(res){
+            for(let i in res.data){
+              let mid = {};
+              mid=res.data[i];
+              getApp().globalData.results.push(mid);
+            }
+          }
         })
       }
     })

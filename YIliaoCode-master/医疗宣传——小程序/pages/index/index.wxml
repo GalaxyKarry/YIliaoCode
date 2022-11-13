@@ -10,7 +10,7 @@
     <view class="info">
         <image src="{{userInfo.avatarUrl}}"></image>
         <view class="text">
-          <text class="name">昵称：{{userInfo.nickName}}</text>
+          <text class="name" style="font-size: x-large;">昵称：{{userInfo.nickName}}</text>
           <view class="tele">
             <text>电话：123****4567</text>
             <van-icon name="closed-eye" size="20"/>
@@ -33,9 +33,9 @@
       <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" url="/pages/change_code/change_code"/>
     </van-cell-group>
   
-    <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
+    <!-- <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
       <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large" url="/pages/report/report"/>
-    </van-cell-group>
+    </van-cell-group> -->
   
 </view>
 
