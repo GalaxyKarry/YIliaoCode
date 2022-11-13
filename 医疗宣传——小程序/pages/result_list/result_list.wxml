@@ -16,30 +16,17 @@
     </van-dropdown-menu>
      
     <view class="result-list" wx:for="{{results}}">
-        <view class="result" bindtap="post_result">
-          <text>检测时间：{{item.time}}</text>
-          <text>检测地点：{{item.place}}</text>
-          <text>是否合格：{{item.pass}}</text>
-          <van-icon name="arrow"/>
-        </view>
+          <view class="result" bindtap="post_result">
+            <view class="mid">
+              <text class="text1">检测时间：{{item.time}}</text>
+              <text>检测地点：{{item.place}}</text>
+              <text>是否合格：{{item.pass}}</text>
+            </view>
+            <view>
+              <van-icon name="arrow"/>
+            </view>
+          </view>
+          
     </view>
 
-      <view class="result-list" >
-        <view class="result" bindtap="post_result">
-          <text>检测结果</text>
-          <van-icon name="arrow"/>
-        </view>
-        <view class="result" bindtap="post_result">
-          <text>检测结果</text>
-          <van-icon name="arrow"/>
-        </view>
-        <view class="result" bindtap="post_result">
-          <text>检测结果</text>
-          <van-icon name="arrow"/>
-        </view>
-        <view class="result" bindtap="post_result">
-          <text>检测结果</text>
-          <van-icon name="arrow"/>
-        </view>
-      </view>
 </view>
