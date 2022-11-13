@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:getApp().globalData.userInfo,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad(option) {
+    //console.log(getApp().globalData)
+    this.setData({
+      userInfo:getApp().globalData.userInfo
+    })
   },
 
   /**

@@ -6,7 +6,7 @@
   <view class="info">
     <view class="item">
       <text class="title">检测id：</text>
-      <text class="content">小野宝宝</text>
+      <text class="content">{{userInfo.nickName}}</text>
     </view>
 
     <view class="item">

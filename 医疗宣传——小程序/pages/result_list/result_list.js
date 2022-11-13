@@ -9,7 +9,7 @@ Page({
   },
   post_result:function(){
     wx.navigateTo({
-      url: '/pages/result/result',
+      url: '/pages/result/result?index=${index}',
     })
   },
   onLoad() {
