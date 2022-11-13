@@ -11,5 +11,12 @@ Page({
     wx.navigateTo({
       url: '/pages/result/result',
     })
+  },
+  onLoad() {
+    //console.log(getApp().globalData)
+    this.setData({
+      results: getApp().globalData.results
+    })
+    console.log(this.data.results)
   }
 });
