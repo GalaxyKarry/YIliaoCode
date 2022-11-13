@@ -13,9 +13,11 @@
     </van-search>
     <van-dropdown-menu>
         <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-    </van-dropdown-menu>  
+    </van-dropdown-menu>
+     
+        
 
-      <view class="result-list">
+      <view class="result-list" >
         <view class="result" bindtap="post_result">
           <text>检测结果</text>
           <van-icon name="arrow"/>

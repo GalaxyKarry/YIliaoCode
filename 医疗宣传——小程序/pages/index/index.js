@@ -1,7 +1,6 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -33,6 +32,18 @@ Page({
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
+        })
+        getApp().globalData.userInfo=res.userInfo
+        wx.request({
+          url: 'http://172.26.174.216:8100/record/getDetectListById/'+res.userInfo.nickName,
+          method:'GET',
+          success:function(res){
+            for(let i in res.data){
+              let mid = {};
+              mid=res.data[i];
+              getApp().globalData.results.push(mid);
+            }
+          }
         })
       }
     })

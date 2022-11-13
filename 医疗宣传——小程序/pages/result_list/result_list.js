@@ -5,6 +5,7 @@ Page({
       { text: '时间降序', value: 1 },
     ],
     value1: 0,
+    results:getApp().globalData.results,
   },
   post_result:function(){
     wx.navigateTo({
