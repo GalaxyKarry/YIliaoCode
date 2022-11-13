@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/feedback")
 public class FeedbackController {
 
     @Autowired
     FeedbackMapper feedbackMapper;
 
     // 返回所有用户
-    @GetMapping("/feedback/all")
+    @GetMapping("/all")
     public List<Feedback> getAll() {
         return feedbackMapper.selectList(null);
     }

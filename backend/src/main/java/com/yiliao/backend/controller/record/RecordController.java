@@ -2,35 +2,50 @@ package com.yiliao.backend.controller.record;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yiliao.backend.mapper.RecordMapper;
+import com.yiliao.backend.mapper.UserMapper;
 import com.yiliao.backend.pojo.Record;
 import com.yiliao.backend.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/record")
 public class RecordController {
     @Autowired
     RecordMapper recordMapper;
+    @Autowired
+    UserMapper userMapper;
 
     // 返回所有记录
-    @GetMapping("/record/all")
+    @GetMapping("/all")
     public List<Record> getAll() {
         return recordMapper.selectList(null);
     }
 
     // 根据用户id查询检测记录列表
-    @GetMapping("/getDetectListById/{id}")
-    public List<Record> getDetectListById(@PathVariable Integer id) {
-        QueryWrapper<Record> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("UID", id);
-        return recordMapper.selectList(queryWrapper);
+    @GetMapping("/getDetectListById/{name}")
+    public List<Record> getDetectListById(@PathVariable String name) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("Uname", name);
+        User res = userMapper.selectOne(queryWrapper);
+
+        QueryWrapper<Record> queryWrapper_records = new QueryWrapper<>();
+        queryWrapper_records.eq("UID", res.getUID());
+        return recordMapper.selectList(queryWrapper_records);
     }
+
+//    @GetMapping("/getDetectListById2")
+//    public List<Record> getDetectListById2(String name) {
+//        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.eq("Uname", name);
+//        User res = userMapper.selectOne(queryWrapper);
+//
+//        QueryWrapper<Record> queryWrapper_records = new QueryWrapper<>();
+//        queryWrapper_records.eq("UID", res.getUID());
+//        return recordMapper.selectList(queryWrapper_records);
+//    }
 
     // 根据检测id查询详细检测信息
     @GetMapping("/getDetectInfoById/{id}")
@@ -38,6 +53,20 @@ public class RecordController {
         QueryWrapper<Record> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("CID", id);
         return recordMapper.selectOne(queryWrapper);
+    }
+
+    // 某个用户合格或不合格的记录列表
+    // isPass = 0, 不合格
+    // isPass = 1, 合格
+    @GetMapping("/getDetectListPassOrNo/{name}/{isPass}")
+    public List<Record> getDetectListPassOrNo(@PathVariable String name, @PathVariable int isPass) {
+        QueryWrapper<User> queryWrapper_user_id = new QueryWrapper<>();
+        queryWrapper_user_id.eq("Uname", name);
+        User res = userMapper.selectOne(queryWrapper_user_id);
+        QueryWrapper<Record> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("Pass", isPass);
+        queryWrapper.eq("UID", res.getUID());
+        return recordMapper.selectList(queryWrapper);
     }
 
     // ?? pass
@@ -56,13 +85,4 @@ public class RecordController {
 //        return null;
 //    }
 
-    // 查收合格或不合格记录
-    // isPass = 0, 不合格
-    // isPass = 1, 合格
-    @GetMapping("/getDetectListPassOrNo/{isPass}")
-    public List<Record> getDetectListPassOrNo(@PathVariable int isPass) {
-        QueryWrapper<Record> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("Pass", isPass);
-        return recordMapper.selectList(queryWrapper);
-    }
 }

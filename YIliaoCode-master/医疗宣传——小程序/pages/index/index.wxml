@@ -1,0 +1,51 @@
+
+
+  <block wx:if="{{!hasUserInfo}}">
+    <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+    <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  </block>
+  <block wx:else>
+    <view style="width: 750rpx; height: 1336rpx; display: block; box-sizing: border-box">
+    
+    <view class="info">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="text">
+          <text class="name">昵称：{{userInfo.nickName}}</text>
+          <view class="tele">
+            <text>电话：123****4567</text>
+            <van-icon name="closed-eye" size="20"/>
+          </view>
+        </view>
+    </view>
+    
+    <view class="view">
+    
+    <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
+      <van-cell center clickable title="检测结果" is-link icon="completed" size="large" url=
+    "/pages/result_list/result_list"/>
+    </van-cell-group>
+  
+    <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
+      <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large" url="/pages/input_face/input_face"/>
+    </van-cell-group>
+
+    <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
+      <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" url="/pages/change_code/change_code"/>
+    </van-cell-group>
+  
+    <van-cell-group inset style="position: relative; left: 0rpx; top: 250rpx">
+      <van-cell center cilckable title="反馈" is-link icon="warn-o" size="large" url="/pages/report/report"/>
+    </van-cell-group>
+  
+</view>
+
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="search">上传</van-tabbar-item>
+  <van-tabbar-item icon="user-o" name="wo">我</van-tabbar-item>
+</van-tabbar>
+
+</view>
+  </block>
+  
+  

@@ -1,0 +1,36 @@
+/* pages/result/result.wxss */
+.result{
+  /* 字体大小 */
+  font-size: 35px;
+  /* 字体颜色 */
+  color: #8BC34A;
+  /* 字体风格-粗细 */
+  font-weight: normal;
+}
+.score
+{
+  /* 字体大小 */
+  font-size: 25px;
+  /* 字体颜色 */
+  color: #8BC34A;
+  /* 字体风格-粗细 */
+  font-weight: normal;
+}
+.title
+{
+  /* 字体大小 */
+  font-size: 20px;
+  /* 字体颜色 */
+  color: black;
+  /* 字体风格-粗细 */
+  font-weight: bolder;
+}
+.content
+{
+  /* 字体大小 */
+  font-size: 18px;
+  /* 字体颜色 */
+  color: black;
+  /* 字体风格-粗细 */
+  font-weight: normal;
+}
