@@ -11,18 +11,21 @@
     >
       <van-button round type="default" slot="action" bind:tap="onClick" size="small">搜索</van-button>
     </van-search> -->
-    <!-- <van-dropdown-menu>
-        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-    </van-dropdown-menu> -->
+    <view style="height: 30rpx;">
+      
+    </view>
+    <van-dropdown-menu>
+        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onSwitch1Change" />
+    </van-dropdown-menu>
      
     <view class="result-list" wx:for="{{results}}" wx:key="index" >
-          <view class="result" bindtap="post_result" data-index="{{index}}">
+          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{item.pass == value1}}" >
             <view class="mid">
               <text class="text1">检测时间：{{item.time}}</text>
               <text>检测地点：{{item.place}}</text>
               
-              <text wx:if="item.pass==0">是否合格：合格</text>
-              <text wx:if="item.pass==1">是否合格：不合格</text>
+              <text wx:if="{{item.pass==0}}">是否合格：合格</text>
+              <text wx:if="{{item.pass==1}}">是否合格：不合格</text>
             </view>
             <view>
               <van-icon name="arrow"/>

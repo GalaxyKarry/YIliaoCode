@@ -22,7 +22,7 @@ Page({
         canIUseGetUserProfile: true
       })
     }
-    
+    this.data.hasUserInfo=getApp().globalData.hasUserInfo
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -32,8 +32,9 @@ Page({
         console.log(res)
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
+          hasUserInfo: true,
         })
+        getApp().globalData.hasUserInfo=this.data.hasUserInfo
         getApp().globalData.userInfo=res.userInfo
         wx.request({
           url: 'http://localhost:8100/record/getDetectListById/'+res.userInfo.nickName,
@@ -56,5 +57,6 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    getApp().globalData.hasUserInfo=this.data.hasUserInfo
   }
 })

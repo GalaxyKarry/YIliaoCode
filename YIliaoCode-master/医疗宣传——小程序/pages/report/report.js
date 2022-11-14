@@ -11,14 +11,16 @@ Page({
     uid: "",
   },
 
-  onChange:function(e){
-    this.setData({
-      contect:e.detail.value
-    });
-    console.log("change contect: ", this.data.contect)
-  },
 
-  record:function(e){
+  onChange(event) {
+    // event.detail 为当前输入的值
+    console.log("event.detail: ", event.detail)
+    console.log("data.contect", this.data.contect)
+    
+  },
+ 
+
+  record:function(){
     
     wx.request({
       url: 'http://localhost:8100/feedback/addFeedback/',
@@ -43,7 +45,9 @@ Page({
       }
     })
     console.log(this.data)
-    
+    wx.navigateTo({
+      url: '/pages/result_list/result_list',
+    })
 },
   
 

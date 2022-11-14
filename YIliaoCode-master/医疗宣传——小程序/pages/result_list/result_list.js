@@ -6,8 +6,13 @@ Page({
     ],
     value1: 0,
     results:getApp().globalData.results,
-    // results_res:[],
   },
+
+
+  onSwitch1Change({ detail }) {
+    this.setData({ value1: detail });
+  },
+
 
   // chang_pass:function(e){
   //   results_res = []
@@ -32,5 +37,6 @@ Page({
       results: getApp().globalData.results
     })
     console.log(this.data.results)
+    console.log(this.data.value1)
   }
 });

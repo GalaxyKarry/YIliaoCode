@@ -33,6 +33,7 @@ public class UserController {
         if(res == null){
             User tmp = new User();
             tmp.setUname(name);
+            tmp.setUpassword("88888888");
 //            tmp.setUID(22);
             userMapper.insert(tmp);
             return "Add User Successfully!";
