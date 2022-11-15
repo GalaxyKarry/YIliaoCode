@@ -4,6 +4,7 @@ Page({
     contect: "",
     picture: "null",
     uid: "",
+    tmp: {minHeight: 100, maxHeight: 2000},
   },
   onChange(event) {
     // event.detail 为当前输入的值

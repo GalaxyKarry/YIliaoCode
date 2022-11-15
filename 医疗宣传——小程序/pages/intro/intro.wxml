@@ -1,5 +1,14 @@
 <view>
-  
+  <swiper indicator-dots autoplay previous-margin="{{margin}}" next-margin="{{margin}}">
+    <block wx:for="{{pic}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="intro-word">
+    <text>小野洗手小助手欢迎您~</text>
+  </view>
 
   <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
     <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>

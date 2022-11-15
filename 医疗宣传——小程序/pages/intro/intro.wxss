@@ -1,3 +1,20 @@
 page{
   background-color: #EBEBE3;
 }
+swiper{
+  height: 400rpx;
+}
+swiper-item{
+  display: flex;
+  justify-content: center;
+}
+.intro-word{
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: center;
+}
+.intro-word text{
+  font-weight: lighter;
+  font-size: medium;
+  color: #A79B9B;
+}

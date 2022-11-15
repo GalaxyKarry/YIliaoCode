@@ -5,9 +5,9 @@
     <van-field
       model:value="{{ contect }}"
       type="textarea"
-      autosize
+      autosize="{{tmp}}"
       placeholder="请输入您的反馈内容"
-      border="{{ false }}"
+      border="{{ true }}"
       bind:change="onChange"
       
     />

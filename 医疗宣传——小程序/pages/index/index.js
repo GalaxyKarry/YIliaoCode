@@ -50,8 +50,11 @@ Page({
   },
   onClick(event) {
     this.setData({active:event.detail});
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/'+event.detail+'/'+event.detail,
     })
+  },
+  onShow(event) {
+    wx.hideHomeButton();
   },
 })

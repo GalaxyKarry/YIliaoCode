@@ -1,13 +1,13 @@
 {
   "pages":[
-    "pages/intro/intro",
+    
     "pages/index/index",
     "pages/result_list/result_list",
     "pages/input_face/input_face",
     "pages/change_code/change_code",
     "pages/report/report",
     "pages/result/result",
-    
+    "pages/intro/intro",
     "pages/upload/upload"
   ],
   "window":{
