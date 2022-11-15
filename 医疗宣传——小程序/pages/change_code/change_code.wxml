@@ -7,7 +7,7 @@
       type="password"
       label="旧密码"
       placeholder="请输入旧密码"
-      bind:click-icon="onClickIcon"
+      bind:change="onClickIcon"
     />
   </van-cell-group>
   <van-cell-group class="input">
@@ -27,7 +27,7 @@
     />
   </van-cell-group>
   <view class="button">
-    <van-button round type="default">确认修改</van-button>
+    <van-button round type="default" bindtap="return">确认修改</van-button>
   </view>
 </view>
 

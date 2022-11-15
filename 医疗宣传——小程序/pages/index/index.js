@@ -3,20 +3,19 @@
 const app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
+    userInfo:{},
+    hasUserInfo:false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    active: "index",
   },
   // 事件处理函数
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad() {
+    this.setData({
+      userInfo: getApp().globalData.userInfo,
+      hasUserInfo: getApp().globalData.hasUserInfo,
+    })
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true
@@ -31,11 +30,12 @@ Page({
         console.log(res)
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
+          hasUserInfo: true,
         })
+        getApp().globalData.hasUserInfo=this.data.hasUserInfo
         getApp().globalData.userInfo=res.userInfo
         wx.request({
-          url: 'http://172.26.174.216:8100/record/getDetectListById/'+res.userInfo.nickName,
+          url: 'http://localhost:8100/record/getDetectListById/'+res.userInfo.nickName,
           method:'GET',
           success:function(res){
             for(let i in res.data){
@@ -48,12 +48,10 @@ Page({
       }
     })
   },
-  getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  onClick(event) {
+    this.setData({active:event.detail});
+    wx.navigateTo({
+      url: '/pages/'+event.detail+'/'+event.detail,
     })
-  }
+  },
 })

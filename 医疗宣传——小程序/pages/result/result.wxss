@@ -54,3 +54,6 @@
   color: black;
   font-weight: normal;
 }
+.but{
+  margin-top: 50rpx;
+}

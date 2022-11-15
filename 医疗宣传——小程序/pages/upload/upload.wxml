@@ -1,0 +1,5 @@
+<van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
+  <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
+  <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
+  <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
+</van-tabbar>

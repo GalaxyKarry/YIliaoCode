@@ -1,18 +1,20 @@
-<view class="container">
+<view class="container" >
   <text class="text">反馈</text>
+
   <van-cell-group>
     <van-field
-      value="{{ value }}"
+      model:value="{{ contect }}"
       type="textarea"
       autosize
       placeholder="请输入您的反馈内容"
       border="{{ false }}"
       bind:change="onChange"
+      
     />
   </van-cell-group>
   <van-uploader>
     <van-button icon="photo" type="default">上传图片</van-button>
   </van-uploader>
-  <van-button type="default">提交反馈</van-button>
+  <van-button type="default" bindtap="record">提交反馈</van-button>
 
 </view>
