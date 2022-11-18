@@ -23,7 +23,7 @@ Page({
   record:function(){
     
     wx.request({
-      url: 'http://localhost:8100/feedback/addFeedback/',
+      url: 'http://172.31.68.191:8100/feedback/addFeedback/',
       method: 'POST',
       header: {
           "Content-Type": "application/json"
