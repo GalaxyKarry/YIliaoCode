@@ -35,7 +35,7 @@ Page({
         getApp().globalData.hasUserInfo=this.data.hasUserInfo
         getApp().globalData.userInfo=res.userInfo
         wx.request({
-          url: 'http://localhost:8100/record/getDetectListById/'+res.userInfo.nickName,
+          url: 'http://172.31.68.191:8100/record/getDetectListById/'+res.userInfo.nickName,
           method:'GET',
           success:function(res){
             for(let i in res.data){
@@ -50,11 +50,11 @@ Page({
   },
   onClick(event) {
     this.setData({active:event.detail});
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/'+event.detail+'/'+event.detail,
     })
   },
-  onShow(event) {
+  onShow(){
     wx.hideHomeButton();
   },
 })

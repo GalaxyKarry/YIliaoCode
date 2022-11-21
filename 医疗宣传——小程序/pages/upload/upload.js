@@ -9,7 +9,7 @@ Page({
   },
   onClick(event) {
     this.setData({active:event.detail});
-    wx.redirectTo({
+    wx.reLaunch({
       url: '/pages/'+event.detail+'/'+event.detail,
     })
   },

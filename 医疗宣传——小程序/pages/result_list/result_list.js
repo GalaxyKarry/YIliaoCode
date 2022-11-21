@@ -3,6 +3,7 @@ Page({
     option1: [
       { text: '合格', value: 0 },
       { text: '不合格', value: 1 },
+      { text: '检测中', value: -1},
     ],
     value1: 0,
     results:getApp().globalData.results,

@@ -2,15 +2,6 @@
     <view class="text">
       <text>检测列表</text>
     </view>
-    <!-- <van-search
-      value="{{ value }}"
-      placeholder="请输入搜索关键词"
-      use-action-slot
-      bind:change="onChange"
-      bind:search="onSearch"
-    >
-      <van-button round type="default" slot="action" bind:tap="onClick" size="small">搜索</van-button>
-    </van-search> -->
     <view style="height: 30rpx;">
       
     </view>
@@ -26,6 +17,7 @@
               
               <text wx:if="{{item.pass==0}}">是否合格：合格</text>
               <text wx:if="{{item.pass==1}}">是否合格：不合格</text>
+              <text wx:if="{{item.pass==-1}}">检测中...</text>
             </view>
             <view>
               <van-icon name="arrow"/>

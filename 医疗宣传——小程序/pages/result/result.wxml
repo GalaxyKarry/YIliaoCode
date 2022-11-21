@@ -1,11 +1,12 @@
 <view class="container">
-  <view class="outcome" wx:if="{{results.pass==0}}">
-    <text class="result">合格</text>
-    <!-- <text class="score">fenshu:{{ results.pass }}</text> -->
+  <view class="outcome1" wx:if="{{results.pass==0}}">
+    <text class="result1">合格</text>
   </view>
-  <view class="outcome" wx:if="{{results.pass==1}}">
-    <text class="result">不合格</text>
-    <!-- <text class="score">fenshu:{{ results.pass }}</text> -->
+  <view class="outcome0" wx:if="{{results.pass==1}}">
+    <text class="result0">不合格</text>
+  </view>
+  <view class="outcome" wx:if="{{results.pass==-1}}">
+    <text class="result">检测中...</text>
   </view>
   <view class="info">
     <view class="item">
@@ -27,7 +28,13 @@
       <text class="title">相关视频：</text>
     </view>
   </view>
-  <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" autoplay="{{true}}" muted="{{true}}"/>
+
+  <video src="{{videos.left}}" autoplay="{{true}}" muted="{{true}}"/>
+  <text style="align-self: center;">左视角洗手视频</text>
+  <video src="{{videos.up}}" autoplay="{{true}}" muted="{{true}}"/>
+  <text style="align-self: center;">俯视角洗手视频</text>
+  <video src="{{videos.right}}" autoplay="{{true}}" muted="{{true}}"/>
+  <text style="align-self: center;">右视角洗手视频</text>
   
   <van-button class="but" type="primary" bindtap="to_record" data-cid="{{ results.cid }} " data-uid="{{ results.uid }}">反馈</van-button>
   

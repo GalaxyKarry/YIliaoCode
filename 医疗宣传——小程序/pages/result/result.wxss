@@ -1,6 +1,8 @@
-.container{
-  height: 1700rpx;
-  background: #F8F8F8; 
+page{
+  background-color: #F8F8F8;
+  height: 100%;
+}
+.container{ 
   display: flex; 
   flex-direction: column;
   justify-content: center;
@@ -10,8 +12,40 @@
   margin-top: 50rpx;
 }
 
-.outcome{
+.outcome1{
   border: #8BC34A solid 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350rpx;
+  width: 350rpx;
+  border-radius: 500rpx;
+}
+.outcome1 .result1{
+  font-size: 35px;
+  color: #8BC34A;
+  font-weight: bold;
+}
+
+.outcome0{
+  border: red solid 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350rpx;
+  width: 350rpx;
+  border-radius: 500rpx;
+}
+.outcome0 .result0{
+  font-size: 35px;
+  color: red;
+  font-weight: bold;
+}
+
+.outcome{
+  border: gray solid 10rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,14 +56,10 @@
 }
 .outcome .result{
   font-size: 35px;
-  color: #8BC34A;
+  color: gray;
   font-weight: bold;
 }
-.outcome .score{
-  font-size: 25px;
-  color: #8BC34A;
-  font-weight: bold;
-}
+
 
 .info{
   display: flex;
