@@ -2,12 +2,37 @@
   <swiper indicator-dots autoplay previous-margin="{{margin}}" next-margin="{{margin}}">
     <block wx:for="{{pic}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}"/>
+        <image src="{{item}}" />
       </swiper-item>
     </block>
   </swiper>
   <view class="intro-word">
-    <text>小野洗手小助手欢迎您~</text>
+    <text wx:if="{{nickName!=''}}">欢迎您，{{nickName}}~</text>
+    <text wx:else>欢迎您~</text>
+  </view>
+
+  <view class="comp" wx:for="{{comp}}">
+    <text class="title">{{item.title}}</text>
+    <view class="widgets">
+      <view class="mid">
+        <view class="widget" wx:for="{{item.widgets_left}}">
+          <image src="{{item.img}}" mode="" />
+          <view class="content">
+            <text>{{index}}{{item.title}}</text>
+            <text>{{index}}{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="mid">
+        <view class="widget" wx:for="{{item.widgets_right}}">
+          <image src="{{item.img}}" mode="" />
+          <view class="content">
+            <text>{{index}}{{item.title}}</text>
+            <text>{{index}}{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 
   <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">

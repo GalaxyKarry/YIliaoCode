@@ -1,5 +1,6 @@
 page{
   background-color: #EBEBE3;
+  height: 100%;
 }
 swiper{
   height: 400rpx;
@@ -17,4 +18,42 @@ swiper-item{
   font-weight: lighter;
   font-size: medium;
   color: #A79B9B;
+}
+.comp{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.comp .title{
+  color: #2EB266;
+  font-size: 60rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+.widgets{
+  display: flex;
+  flex-direction: row;
+  
+}
+.mid{
+  display: flex;
+  flex-direction: column;
+  margin: 15rpx;
+}
+.widget{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx;
+  background-color: white;
+  padding: 15rpx;
+  border-radius: 25rpx;
+}
+.widget text{
+  display: flex;
+  flex-direction: row;
+}
+.widget image{
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 25rpx;
 }
