@@ -4,5 +4,6 @@
   "setting": {
     "compileHotReLoad": false,
     "urlCheck": false
-  }
+  },
+  "libVersion": "2.27.2"
 }

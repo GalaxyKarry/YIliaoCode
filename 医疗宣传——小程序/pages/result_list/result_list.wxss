@@ -37,6 +37,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 5rpx 10rpx 20rpx rgba(56, 192, 170, 0.15);
 }
 
 .result van-icon{

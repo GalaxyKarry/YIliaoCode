@@ -1,5 +1,37 @@
-<van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
-  <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
-  <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
-  <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
-</van-tabbar>
+<view>
+
+  <view class="item">
+    <button class="upBut" type="default" bindtap="chooseLeft" wx:if="{{chosenLeft!=true}}">请上传左视角视频</button>
+    <block wx:else="{{chosenLeft==true}}">
+      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">左视角</text>
+      <video src="{{left}}"/>
+      <button size="mini" bindtap="deleLeft" style="margin-top: 20rpx;">删除</button>
+    </block>
+  </view>
+
+  <view class="item">
+    <button class="upBut" type="default" bindtap="chooseUp" wx:if="{{chosenUp!=true}}">请上传俯视角视频</button>
+    <block wx:else="{{chosenUp==true}}">
+      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">俯视角</text>
+      <video src="{{up}}"/>
+      <button size="mini" bindtap="deleUp" style="margin-top: 20rpx;">删除</button>
+    </block>
+  </view>
+
+  <view class="item">
+    <button class="upBut" type="default" bindtap="chooseRight" wx:if="{{chosenRight!=true}}">请上传右视角视频</button>
+    <block wx:else="{{chosenRight==true}}">
+      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">右视角</text>
+      <video src="{{right}}"/>
+      <button size="mini" bindtap="deleRight" style="margin-top: 20rpx;">删除</button>
+    </block>
+  </view>
+
+  <view style="padding-bottom: 25%;"></view>
+
+  <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
+    <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
+    <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
+    <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
+  </van-tabbar>
+</view>

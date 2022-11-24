@@ -1,8 +1,8 @@
 <view>
-  <swiper indicator-dots autoplay previous-margin="{{margin}}" next-margin="{{margin}}">
+  <swiper indicator-dots autoplay>
     <block wx:for="{{pic}}" wx:key="index">
       <swiper-item>
-        <image src="{{item}}" />
+        <image class="img" mode="heightFix" src="{{item}}" />
       </swiper-item>
     </block>
   </swiper>
@@ -11,29 +11,33 @@
     <text wx:else>欢迎您~</text>
   </view>
 
-  <view class="comp" wx:for="{{comp}}">
-    <text class="title">{{item.title}}</text>
-    <view class="widgets">
-      <view class="mid">
-        <view class="widget" wx:for="{{item.widgets_left}}">
-          <image src="{{item.img}}" mode="" />
-          <view class="content">
-            <text>{{index}}{{item.title}}</text>
-            <text>{{index}}{{item.content}}</text>
+  <view class="container"  wx:for="{{comp}}">
+    <text class="title">{{item.content}}</text>
+    <view class="comp">
+      <view class="widgets">
+        <view class="mid">
+          <view class="widget" wx:for="{{item.smallComponentsLeft}}">
+            <image src="{{item.img}}" mode="" />
+            <view class="content">
+              <text class="title">{{item.title}}</text>
+              <text class="cont">{{item.content}}</text>
+            </view>
           </view>
         </view>
-      </view>
-      <view class="mid">
-        <view class="widget" wx:for="{{item.widgets_right}}">
-          <image src="{{item.img}}" mode="" />
-          <view class="content">
-            <text>{{index}}{{item.title}}</text>
-            <text>{{index}}{{item.content}}</text>
+        <view class="mid">
+          <view class="widget" wx:for="{{item.smallComponentsRight}}">
+            <image src="{{item.img}}" mode="" />
+            <view class="content">
+              <text class="title">{{item.title}}</text>
+              <text class="cont">{{item.content}}</text>
+            </view>
           </view>
         </view>
       </view>
     </view>
   </view>
+
+  <view style="padding-bottom: 25%;"></view>
 
   <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
     <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>

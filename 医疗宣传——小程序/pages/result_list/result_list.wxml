@@ -10,7 +10,21 @@
     </van-dropdown-menu>
      
     <view class="result-list" wx:for="{{results}}" wx:key="index" >
-          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{item.pass == value1}}" >
+          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{item.pass == value1 && value1 != 2}}" >
+            <view class="mid">
+              <text class="text1">检测时间：{{item.time}}</text>
+              <text>检测地点：{{item.place}}</text>
+              
+              <text wx:if="{{item.pass==0}}">是否合格：合格</text>
+              <text wx:if="{{item.pass==1}}">是否合格：不合格</text>
+              <text wx:if="{{item.pass==-1}}">检测中...</text>
+            </view>
+            <view>
+              <van-icon name="arrow"/>
+            </view>
+          </view>
+
+          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{value1 == 2}}">
             <view class="mid">
               <text class="text1">检测时间：{{item.time}}</text>
               <text>检测地点：{{item.place}}</text>

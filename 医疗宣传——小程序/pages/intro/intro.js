@@ -1,27 +1,15 @@
-// pages/intro/intro.js
 Page({
 
   data: {
     active:'intro',
     pic:{
-      pic1: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp',
+      pic1: '/rsc/944a473a4ff55ccb620b2f7f2e342fee.jpeg',
       pic2: '/rsc/u=464795884,1983259506&fm=253&fmt=auto&app=120&f=JPEG.webp',
-      pic3: '/rsc/u=4188778147,2019931444&fm=253&fmt=auto&app=120&f=JPEG.webp'
+      pic3: '/rsc/u=4188778147,2019931444&fm=253&fmt=auto&app=120&f=JPEG.webp',
+      pic4:'/rsc/屏幕截图 2022-11-22 094537.png'
     },
-    margin:"10px",
     nickName:'',
-    comp:[
-      {title: '神医', 
-        widgets_left: [
-        {title: '小野', content: '主治医师', img: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp'},
-        {title: '小野', content: '主治医师', img: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp'},
-        {title: '小野', content: '主治医师', img: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp'}
-        ],
-        widgets_right: [
-        {title: '小野', content: '主治医师', img: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp'},
-        {title: '小野', content: '主治医师', img: '/rsc/u=941056406,1822751651&fm=253&fmt=auto&app=120&f=JPEG.webp'}
-        ],
-      }]
+    comp:[],
   },
   onClick(event) {
     this.setData({active:event.detail});
@@ -33,10 +21,19 @@ Page({
     wx.hideHomeButton();
   },
   onLoad(){
+    const that = this
     if(getApp().globalData.hasUserInfo){
       this.setData({
         nickName:getApp().globalData.userInfo.nickName,
       })
     }
+    wx.request({
+      url: getApp().globalData.host+'/largeComponent/getLargeAndSmallComponent',
+      success(res){
+        that.setData({
+          comp:res.data.data.lsList
+        })
+      }
+    })
   }
 })

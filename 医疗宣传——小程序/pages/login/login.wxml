@@ -1,0 +1,34 @@
+<view>
+  <view class="title">
+    <text>注册</text>
+  </view>
+  <view class="container">
+    <view class="avatar">
+      <button plain="true" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image src="{{avatarUrl}}"></image>
+      </button>
+      <text wx:if="{{!chosenAvatar}}">请选择您的头像</text>
+    </view>
+    <view class="inputs">
+      <form bindsubmit="onChooseNickname">
+        <view class="item">
+          <van-icon color="#000000" name="user-o" />
+          <input type="nickname" class="weui-input" placeholder="请输入昵称" name="nickName" />
+        </view>
+        <view class="item">
+          <van-icon color="#000000" name="phone-o" />
+          <input type="number" class="weui-input" placeholder="请输入手机号" name="tele" />
+        </view>
+        <view class="item">
+          <van-icon color="#000000" name="warn-o" />
+          <input class="weui-input" placeholder="请输入密码" name="password" />
+        </view>
+        <view class="item">
+          <van-icon color="#000000" name="warn-o" />
+          <input class="weui-input" placeholder="请确认密码" name="passwordConf" />
+        </view>
+        <button form-type="submit">确认</button>
+      </form>
+    </view>
+  </view>
+</view>

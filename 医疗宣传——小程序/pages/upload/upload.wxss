@@ -1,3 +1,25 @@
 page{
   background-color: #EBEBE3;
 }
+.item{
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 30rpx;
+  margin: 30rpx;
+  height: 800rpx;
+}
+.item .upBut{
+  width: 400rpx;
+  border-radius: 30rpx;
+  margin: 30rpx;
+}
+.item button{
+  border-radius: 30rpx;
+  align-self: center;
+}
+.item video{
+  align-self: center;
+  height: 80%;
+  width: 100%;
+}

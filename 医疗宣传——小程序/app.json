@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/upload/upload",
     "pages/intro/intro",
     "pages/index/index",
     "pages/result_list/result_list",
@@ -7,7 +8,9 @@
     "pages/change_code/change_code",
     "pages/report/report",
     "pages/result/result",
-    "pages/upload/upload"
+    "pages/login/login",
+    "pages/test/test"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
