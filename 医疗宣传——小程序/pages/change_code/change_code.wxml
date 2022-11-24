@@ -7,7 +7,6 @@
       type="password"
       label="旧密码"
       placeholder="请输入旧密码"
-      bind:change="onClickIcon"
     />
   </van-cell-group>
   <van-cell-group class="input">
@@ -17,9 +16,8 @@
       type="password"
       label="新密码"
       placeholder="请输入新密码"
-      bind:click-icon="onClickIcon"
     />
-    <van-field
+    <van-field class="input"
       model:value="{{ confirmedPassword }}"
       type="password"
       label="确认新密码"

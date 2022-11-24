@@ -1,11 +1,11 @@
 <view class="container">
-  <view class="outcome1" wx:if="{{results.pass==0}}">
+  <view class="outcome1" wx:if="{{results.isPass==0}}">
     <text class="result1">合格</text>
   </view>
-  <view class="outcome0" wx:if="{{results.pass==1}}">
+  <view class="outcome0" wx:if="{{results.isPass==1}}">
     <text class="result0">不合格</text>
   </view>
-  <view class="outcome" wx:if="{{results.pass==-1}}">
+  <view class="outcome" wx:if="{{results.isPass==-1}}">
     <text class="result">检测中...</text>
   </view>
   <view class="info">
@@ -16,7 +16,7 @@
 
     <view class="item">
       <text class="title">检测时间：</text>
-      <text class="content">{{ results.time }}</text>
+      <text class="content">{{ results.timestamp }}</text>
     </view>
 
     <view class="item">

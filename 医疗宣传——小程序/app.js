@@ -11,6 +11,29 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log("code: "+res.code)
+        wx.request({
+          url: getApp().globalData.host+'/user/login',
+          data:{
+            code:res.code
+          },
+          success(res){
+            console.log(res)
+            getApp().globalData.userInfo.nickName=res.data.data.user.username
+            getApp().globalData.userInfo.avatarUrl=getApp().globalData.host+'/'+res.data.data.user.avatar
+            getApp().globalData.userInfo.telephone=res.data.data.user.phone
+            getApp().globalData.password=res.data.data.user.password
+            getApp().globalData.openid=res.data.data.user.openid
+            if(res.data.data.user.username==null || res.data.data.user.avatar==null || res.data.data.user.phone==null){
+              getApp().globalData.hasUserInfo=false
+            }
+            else{
+              getApp().globalData.hasUserInfo=true
+            }
+            console.log(getApp().globalData.hasUserInfo)
+            console.log(getApp().globalData.openid)
+            console.log(res)
+          }
+        })
       }
     })
   },

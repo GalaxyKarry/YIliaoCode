@@ -42,17 +42,27 @@ Page({
     getApp().globalData.password=e.detail.value.password
     getApp().globalData.userInfo.avatarUrl=this.data.avatarUrl
     getApp().globalData.hasUserInfo=true
+    console.log(getApp().globalData.userInfo.nickName)
+    console.log(getApp().globalData.userInfo.telephone)
+    console.log(getApp().globalData.password)
     wx.request({
-      url: 'http://172.31.68.191:8100/record/getDetectListById/'+getApp().globalData.userInfo.nickName,
+      url: getApp().globalData.host+'/record/getRecordListById/'+getApp().globalData.openid,
       method:'GET',
       success:function(res){
-        console.log("拿到检测结果了")
-        for(let i in res.data){
-          let mid = {};
-          mid=res.data[i];
-          getApp().globalData.results.push(mid);
-        }
+        getApp().globalData.results=res.data.data.records
       }
+    })
+    wx.request({
+      url: getApp().globalData.host+'/user/register/'+getApp().globalData.openid+'/'+getApp().globalData.userInfo.nickName+'/'+getApp().globalData.password+'/'+getApp().globalData.userInfo.telephone,
+      method:'POST',
+      success(res){
+        console.log(res)
+      }
+    })
+    wx.uploadFile({
+      filePath: getApp().globalData.userInfo.avatarUrl,
+      name: 'avatar',
+      url: getApp().globalData.host+'/user/registerAvatar/'+getApp().globalData.openid,
     })
     wx.reLaunch({
       url: '/pages/index/index',

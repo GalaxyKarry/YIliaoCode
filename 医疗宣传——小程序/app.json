@@ -1,15 +1,17 @@
 {
   "pages":[
-    "pages/upload/upload",
     "pages/intro/intro",
+    "pages/test/test",
+    "pages/upload/upload",
+    
     "pages/index/index",
     "pages/result_list/result_list",
     "pages/input_face/input_face",
     "pages/change_code/change_code",
     "pages/report/report",
     "pages/result/result",
-    "pages/login/login",
-    "pages/test/test"
+    "pages/login/login"
+    
     
   ],
   "window":{

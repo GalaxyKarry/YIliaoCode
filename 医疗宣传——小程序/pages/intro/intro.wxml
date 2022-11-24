@@ -2,7 +2,7 @@
   <swiper indicator-dots autoplay>
     <block wx:for="{{pic}}" wx:key="index">
       <swiper-item>
-        <image class="img" mode="heightFix" src="{{item}}" />
+        <image class="img" mode="heightFix" src="{{item.bannerImage}}" />
       </swiper-item>
     </block>
   </swiper>
@@ -19,7 +19,7 @@
           <view class="widget" wx:for="{{item.smallComponentsLeft}}">
             <image src="{{item.img}}" mode="" />
             <view class="content">
-              <text class="title">{{item.title}}</text>
+              <text class="title">{{item.subtitle}}</text>
               <text class="cont">{{item.content}}</text>
             </view>
           </view>
@@ -28,7 +28,7 @@
           <view class="widget" wx:for="{{item.smallComponentsRight}}">
             <image src="{{item.img}}" mode="" />
             <view class="content">
-              <text class="title">{{item.title}}</text>
+              <text class="title">{{item.subtitle}}</text>
               <text class="cont">{{item.content}}</text>
             </view>
           </view>

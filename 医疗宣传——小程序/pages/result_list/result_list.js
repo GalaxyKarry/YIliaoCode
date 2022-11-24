@@ -21,10 +21,17 @@ Page({
     })
   },
   onLoad() {
-    this.setData({
-      results: getApp().globalData.results
+    const that = this
+    wx.request({
+      url: getApp().globalData.host+'/record/getRecordListById/'+getApp().globalData.openid,
+      method:'GET',
+      success:function(res){
+        getApp().globalData.results=res.data.data.records
+        console.log(getApp().globalData.results)
+        that.setData({
+          results: getApp().globalData.results
+        })
+      }
     })
-    console.log(this.data.results)
-    console.log(getApp().globalData.results)
   }
 });

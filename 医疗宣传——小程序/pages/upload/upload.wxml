@@ -27,6 +27,10 @@
     </block>
   </view>
 
+  <view style="display: flex; align-content: center;">
+    <button type="primary" size="mini" bindtap="upLoad" style="margin-top: 50rpx; margin-bottom: 50rpx;">确认上传</button>
+  </view>
+  
   <view style="padding-bottom: 25%;"></view>
 
   <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
