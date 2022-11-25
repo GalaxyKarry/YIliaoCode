@@ -5,6 +5,7 @@ Page({
     pic:[],
     nickName:'',
     comp:[],
+    host:'',
   },
   onClick(event) {
     this.setData({active:event.detail});
@@ -17,6 +18,9 @@ Page({
   },
   onLoad(){
     const that = this
+    this.setData({
+      host:getApp().globalData.host
+    })
     if(getApp().globalData.hasUserInfo){
       this.setData({
         nickName:getApp().globalData.userInfo.nickName,
@@ -28,6 +32,7 @@ Page({
         that.setData({
           comp:res.data.data.lsList
         })
+        console.log(res)
       }
     })
     wx.request({
@@ -36,6 +41,7 @@ Page({
         that.setData({
           pic:res.data.data.bannerList
         })
+        console.log(res)
       }
     })
   }

@@ -26,7 +26,7 @@ App({
             if(res.data.data.user.username==null || res.data.data.user.avatar==null || res.data.data.user.phone==null){
               getApp().globalData.hasUserInfo=false
             }
-            else{
+            else if(res.data.data.username!=''){
               getApp().globalData.hasUserInfo=true
             }
             console.log(getApp().globalData.hasUserInfo)
