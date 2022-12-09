@@ -20,7 +20,6 @@ page{
 }
 .avatar button{
   margin-top: 80rpx;
-
 }
 .avatar text{
   font-size: small;

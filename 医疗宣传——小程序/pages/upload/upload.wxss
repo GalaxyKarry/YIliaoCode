@@ -1,25 +1,110 @@
 page{
-  background-color: #EBEBE3;
+  background-color: #F0F3FF;
+  height: 100%;
 }
-.item{
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50rpx;
+}
+.title{
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.subTitle{
+  font-weight: bolder;
+  color: #929DB3;
+}
+
+.item0{
   display: flex;
   flex-direction: column;
   background-color: #f8f8f8;
   border-radius: 30rpx;
   margin: 30rpx;
-  height: 800rpx;
+  padding: 20rpx;
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.20);
 }
-.item .upBut{
-  width: 400rpx;
-  border-radius: 30rpx;
+.item0 .upBut{
   margin: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.item button{
+.upBut text{
+  color: #929DB3;
+  font-weight: bolder;
+  font-size: xx-small;
+  margin-top: 20rpx;
+}
+.item0 .delBut{
+  background-color: #786FD2;
+  color: white;
   border-radius: 30rpx;
   align-self: center;
+  margin-top: 20rpx;
 }
-.item video{
+.item0 video{
   align-self: center;
-  height: 80%;
-  width: 100%;
+  border-radius: 30rpx;
+}
+button[plain]{
+  border: none;
+}
+
+.confiBut{
+  background-color: #786FD2;
+  color: white;
+  margin-top: 36rpx;
+  width: 283rpx;
+  height: 81rpx;
+  border-radius: 17rpx;
+  font-size: 35rpx;
+}
+
+.bar{
+  width: 750rpx;
+  height: 162rpx;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0rpx -10rpx 20rpx rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 29rpx;
+  border-top-right-radius: 29rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.bar .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45rpx;
+}
+.bar .item text{
+  font-size: x-small;
+  font-weight: bolder;
+  color: #929DB3;
+}
+
+.shield{
+  background-color: #F0F3FF;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.shield image{
+  width: 561rpx;
+  height: 511rpx;
+}
+.shield button{
+  background-color: #786FD2;
+  color: white;
+  margin-top: 36rpx;
+  width: 283rpx;
+  height: 81rpx;
+  border-radius: 17rpx;
+  font-size: 35rpx;
 }

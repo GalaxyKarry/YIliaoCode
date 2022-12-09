@@ -1,6 +1,5 @@
 Page({
   data: {
-    active: "upload",
     chosenLeft:false,
     chosenUp:false,
     chosenRight:false,
@@ -8,11 +7,11 @@ Page({
     up:'',
     right:'',
     time:'',
+    hasUserInfo:false,
   },
-  onClick(event) {
-    this.setData({active:event.detail});
-    wx.reLaunch({
-      url: '/pages/'+event.detail+'/'+event.detail,
+  onLoad(event){
+    this.setData({
+      hasUserInfo:getApp().globalData.hasUserInfo,
     })
   },
   onShow(event){
@@ -126,6 +125,20 @@ Page({
     this.deleLeft()
     this.deleUp()
     this.deleRight()
+  },
+  postIntro(){
+    wx.reLaunch({
+      url: '/pages/intro/intro',
+    })
+  },
+  postIndex(){
+    wx.reLaunch({
+      url: '/pages/index/index',
+    })
+  },
+  postLogin(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
   }
-
 })

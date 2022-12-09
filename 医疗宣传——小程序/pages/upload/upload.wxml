@@ -1,41 +1,70 @@
 <view>
+  <view wx:if="{{hasUserInfo==true}}">
+    <view class="container">
+      <text class="title">上传视频</text>
+      <text class="subTitle">请上传三个角度的洗手视频以完成洗手规范评估</text>
+    </view>
+    <view class="item0">
+      <button class="upBut" bindtap="chooseLeft" wx:if="{{chosenLeft!=true}}" plain="true">
+        <image src="../../rsc/Group.png" mode="" style="height: 63px; width: 63px;" />
+        <text>请上传左视角视频</text>
+      </button>
+      <block wx:else="{{chosenLeft==true}}">
+        <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">左视角</text>
+        <video src="{{left}}" />
+        <button class="delBut" size="mini" bindtap="deleLeft" plain="true">删除</button>
+      </block>
+    </view>
 
-  <view class="item">
-    <button class="upBut" type="default" bindtap="chooseLeft" wx:if="{{chosenLeft!=true}}">请上传左视角视频</button>
-    <block wx:else="{{chosenLeft==true}}">
-      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">左视角</text>
-      <video src="{{left}}"/>
-      <button size="mini" bindtap="deleLeft" style="margin-top: 20rpx;">删除</button>
-    </block>
-  </view>
+    <view class="item0">
+      <button class="upBut" bindtap="chooseUp" wx:if="{{chosenUp!=true}}" plain="true">
+        <image src="../../rsc/Group.png" mode="" style="height: 63px; width: 63px;" />
+        <text>请上传俯视角视频</text>
+      </button>
+      <block wx:else="{{chosenUp==true}}">
+        <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">俯视角</text>
+        <video src="{{up}}" />
+        <button class="delBut" size="mini" bindtap="deleUp" style="margin-top: 20rpx;">删除</button>
+      </block>
+    </view>
 
-  <view class="item">
-    <button class="upBut" type="default" bindtap="chooseUp" wx:if="{{chosenUp!=true}}">请上传俯视角视频</button>
-    <block wx:else="{{chosenUp==true}}">
-      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">俯视角</text>
-      <video src="{{up}}"/>
-      <button size="mini" bindtap="deleUp" style="margin-top: 20rpx;">删除</button>
-    </block>
-  </view>
+    <view class="item0">
+      <button class="upBut" bindtap="chooseRight" wx:if="{{chosenRight!=true}}" plain="true">
+        <image src="../../rsc/Group.png" mode="" style="height: 63px; width: 63px;" />
+        <text>请上传右视角视频</text>
+      </button>
+      <block wx:else="{{chosenRight==true}}">
+        <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">右视角</text>
+        <video src="{{right}}" />
+        <button class="delBut" size="mini" bindtap="deleRight" plain="true">删除</button>
+      </block>
+    </view>
 
-  <view class="item">
-    <button class="upBut" type="default" bindtap="chooseRight" wx:if="{{chosenRight!=true}}">请上传右视角视频</button>
-    <block wx:else="{{chosenRight==true}}">
-      <text style="align-self: center; font-size: larger; font-weight: bolder; margin-bottom: 30rpx; margin-top: 30rpx;">右视角</text>
-      <video src="{{right}}"/>
-      <button size="mini" bindtap="deleRight" style="margin-top: 20rpx;">删除</button>
-    </block>
-  </view>
+    <view style="display: flex; align-content: center;">
+      <button class="confiBut" bindtap="upLoad">上传</button>
+    </view>
 
-  <view style="display: flex; align-content: center;">
-    <button type="primary" size="mini" bindtap="upLoad" style="margin-top: 50rpx; margin-bottom: 50rpx;">确认上传</button>
+    <view style="padding-bottom: 25%;"></view>
+
   </view>
   
-  <view style="padding-bottom: 25%;"></view>
+  <view wx:else="{{hasUserInfo!=true}}" class="shield">
+    <image src="../../rsc/pic1.png" mode=""/>
+    <button bindtap="postLogin">立即注册</button>
+  </view>
 
-  <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
-    <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
-    <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
-    <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
-  </van-tabbar>
+  <view class="bar">
+    <view class="item">
+      <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;" bindtap="postIntro" />
+      <text>首页</text>
+    </view>
+    <view class="item">
+      <image src="../../rsc/plus-circle.png" style="height: 23px; width: 23px;" />
+      <text>上传</text>
+    </view>
+    <view class="item">
+      <image src="../../rsc/user.png" style="height: 23px; width: 23px;" bindtap="postIndex" />
+      <text>我的</text>
+    </view>
+  </view>
 </view>
