@@ -1,1 +1,48 @@
-/* pages/test/test.wxss */
+page{
+  height: 100%;
+}
+.container{
+  background-color: #F0F3FF;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container image{
+  width: 561rpx;
+  height: 511rpx;
+}
+.container button{
+  background-color: #786FD2;
+  color: white;
+  margin-top: 36rpx;
+  width: 283rpx;
+  height: 81rpx;
+  border-radius: 17rpx;
+  font-size: 35rpx;
+}
+.bar{
+  width: 750rpx;
+  height: 162rpx;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0rpx -10rpx 20rpx rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 29rpx;
+  border-top-right-radius: 29rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.bar .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45rpx;
+}
+.bar .item text{
+  font-size: x-small;
+  font-weight: bolder;
+  color: #929DB3;
+}

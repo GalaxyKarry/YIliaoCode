@@ -1,6 +1,7 @@
 /**index.wxss**/
 page{
   background-color: #EBEBE3;
+  height: 100%;
 }
 .userinfo {
   display: flex;
@@ -42,24 +43,44 @@ page{
 
 .text{
   margin-left: 30rpx;
-  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
 
 .name{
-  font-size: 35px;
+  font-size: xx-large;
   color: black;
   font-weight: normal;
-  margin-left: 5rpx;
 }
 
 .tele text{
-  font-size: 15px;
+  font-size: x-large;
   color: black;
-  font-weight: 100;
-  margin-left: 95rpx;
+  font-weight: lighter;
   margin-bottom: 10rpx;
 }
 
 .van-cell-group{
   box-shadow: 5rpx 10rpx 20rpx rgba(0, 0, 0, 0.15);
+}
+.container{
+  background-color: #F0F3FF;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container image{
+  width: 561rpx;
+  height: 511rpx;
+}
+.container button{
+  background-color: #786FD2;
+  color: white;
+  margin-top: 36rpx;
+  width: 283rpx;
+  height: 81rpx;
+  border-radius: 17rpx;
+  font-size: 35rpx;
 }

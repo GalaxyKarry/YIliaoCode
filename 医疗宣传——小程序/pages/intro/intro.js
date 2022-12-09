@@ -1,17 +1,10 @@
 Page({
 
   data: {
-    active:'intro',
     pic:[],
     nickName:'',
     comp:[],
     host:'',
-  },
-  onClick(event) {
-    this.setData({active:event.detail});
-    wx.reLaunch({
-      url: '/pages/'+event.detail+'/'+event.detail,
-    })
   },
   onShow(event){
     wx.hideHomeButton();
@@ -43,6 +36,16 @@ Page({
         })
         console.log(res)
       }
+    })
+  },
+  postUpload(){
+    wx.reLaunch({
+      url: '/pages/upload/upload',
+    })
+  },
+  postIndex(){
+    wx.reLaunch({
+      url: '/pages/index/index',
     })
   }
 })

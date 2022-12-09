@@ -46,23 +46,42 @@ Page({
     console.log(getApp().globalData.userInfo.telephone)
     console.log(getApp().globalData.password)
     wx.request({
-      url: getApp().globalData.host+'/record/getRecordListById/'+getApp().globalData.openid,
+      url: getApp().globalData.host+'/record/getRecordListById/',
+      header: {
+        "Content-Type": "application/json"
+      },
+      data:{
+        openid:getApp().globalData.openid,
+      },
       method:'GET',
       success:function(res){
         getApp().globalData.results=res.data.data.records
       }
     })
     wx.request({
-      url: getApp().globalData.host+'/user/register/'+getApp().globalData.openid+'/'+getApp().globalData.userInfo.nickName+'/'+getApp().globalData.password+'/'+getApp().globalData.userInfo.telephone,
+      url: getApp().globalData.host+'/user/register/',
       method:'POST',
+      header: {
+        "Content-Type": "application/json"
+      },
+      data:{
+        openid:getApp().globalData.openid,
+        username:getApp().globalData.userInfo.nickName,
+        phone:getApp().globalData.userInfo.telephone,
+        password:getApp().globalData.password,
+      },
       success(res){
         console.log(res)
       }
     })
-    wx.uploadFile({
-      filePath: getApp().globalData.userInfo.avatarUrl,
-      name: 'avatar',
-      url: getApp().globalData.host+'/user/registerAvatar/'+getApp().globalData.openid,
+    wx.login({
+      success: (res) => {
+        wx.uploadFile({
+          filePath: getApp().globalData.userInfo.avatarUrl,
+          name: 'avatar',
+          url: getApp().globalData.host+'/user/registerAvatar/'+res.code,
+        })
+      },
     })
     wx.reLaunch({
       url: '/pages/index/index',

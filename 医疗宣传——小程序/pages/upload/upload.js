@@ -26,7 +26,7 @@ Page({
       sourceType: ['album'],
       sizeType:['compressed'],
       success(res){
-        console.log(res)
+        console.log("111 "+res)
         that.setData({
           left:res.tempFiles[0].tempFilePath,
           chosenLeft:true

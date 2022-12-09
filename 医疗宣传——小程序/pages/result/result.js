@@ -7,14 +7,15 @@ Page({
       left:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
       up:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
       right:'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400',
-    }
+    },
+    host:'',
   },
   to_record:function(e){
-    console.log('e.target.dataset.cid---->', e.target.dataset.cid)
-    console.log('e.target.dataset.uid---->', e.target.dataset.uid)
+    console.log('e.target.dataset.cid---->', e.currentTarget.dataset['cid'])
+    console.log('e.target.dataset.uid---->', e.currentTarget.dataset['uid'])
   
     wx.navigateTo({
-      url: '/pages/report/report?cid=' + e.target.dataset.cid + '&uid=' + e.target.dataset.uid,
+      url: '/pages/report/report?cid=' + e.currentTarget.dataset['cid'] + '&uid=' + e.currentTarget.dataset['uid'],
     })
   },
 
@@ -27,56 +28,9 @@ Page({
     console.log(getApp().globalData.results[index])
     this.setData({
       userInfo:getApp().globalData.userInfo,
-      results: getApp().globalData.results[index]
+      results: getApp().globalData.results[index],
+      host:getApp().globalData.host,
     })
+    console.log(this.data.results)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })

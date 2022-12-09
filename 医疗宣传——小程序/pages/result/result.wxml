@@ -16,12 +16,12 @@
 
     <view class="item">
       <text class="title">检测时间：</text>
-      <text class="content">{{ results.timestamp }}</text>
+      <text class="content">{{results.timestamp}}</text>
     </view>
 
     <view class="item">
       <text class="title">建议：</text>
-      <text class="content">{{ results.proposal }}</text>
+      <text class="content">{{results.proposal}}</text>
     </view>
 
     <view class="item">
@@ -29,11 +29,11 @@
     </view>
   </view>
 
-  <video src="{{videos.left}}" autoplay="{{true}}" muted="{{true}}"/>
+  <video src="{{host}}/{{results.leftVideo}}" autoplay="{{true}}" muted="{{true}}"/>
   <text style="align-self: center;">左视角洗手视频</text>
-  <video src="{{videos.up}}" autoplay="{{true}}" muted="{{true}}"/>
+  <video src="{{host}}/{{results.upVideo}}" autoplay="{{true}}" muted="{{true}}"/>
   <text style="align-self: center;">俯视角洗手视频</text>
-  <video src="{{videos.right}}" autoplay="{{true}}" muted="{{true}}"/>
+  <video src="{{host}}/{{results.rightVideo}}" autoplay="{{true}}" muted="{{true}}"/>
   <text style="align-self: center;">右视角洗手视频</text>
   
   <van-button class="but" type="primary" bindtap="to_record"  data-cid="{{ results.cid }} " data-uid="{{ results.uid }}">反馈</van-button>

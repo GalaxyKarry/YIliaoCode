@@ -1,34 +1,30 @@
 <view>
-  <swiper indicator-dots autoplay>
+  <swiper indicator-dots autoplay previous-margin="50rpx" next-margin="50rpx">
     <block wx:for="{{pic}}" wx:key="index">
       <swiper-item>
-        <image class="img" mode="heightFix" src="{{host}}/{{item.bannerImage}}" />
+        <image class="img" mode="heightFix" src="{{host}}/{{item.bannerImage}}" mode="aspectFill" />
       </swiper-item>
     </block>
   </swiper>
-  <view class="intro-word">
-    <text wx:if="{{nickName!=''}}">欢迎您，{{nickName}}~</text>
-    <text wx:else>欢迎您~</text>
-  </view>
 
-  <view class="container"  wx:for="{{comp}}">
+  <view class="container" wx:for="{{comp}}">
     <text class="title">{{item.content}}</text>
     <view class="comp">
       <view class="widgets">
         <view class="mid">
           <view class="widget" wx:for="{{item.smallComponentsLeft}}">
-            <image src="{{host}}/{{item.image}}" mode="" />
+            <image src="{{host}}/{{item.image}}" mode="aspectFill" />
             <view class="content">
-              <text class="title">{{item.subtitle}}</text>
+              <text class="tit">{{item.subtitle}}</text>
               <text class="cont">{{item.content}}</text>
             </view>
           </view>
         </view>
         <view class="mid">
           <view class="widget" wx:for="{{item.smallComponentsRight}}">
-            <image src="{{host}}/{{item.image}}" mode="" />
+            <image src="{{host}}/{{item.image}}" mode="aspectFill" />
             <view class="content">
-              <text class="title">{{item.subtitle}}</text>
+              <text class="tit">{{item.subtitle}}</text>
               <text class="cont">{{item.content}}</text>
             </view>
           </view>
@@ -39,9 +35,18 @@
 
   <view style="padding-bottom: 25%;"></view>
 
-  <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
-    <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
-    <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
-    <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
-  </van-tabbar>
+  <view class="bar">
+    <view class="item">
+      <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;" />
+      <text>首页</text>
+    </view>
+    <view class="item" bindtap="postUpload">
+      <image src="../../rsc/plus-circle.png" style="height: 23px; width: 23px;" />
+      <text>上传</text>
+    </view>
+    <view class="item" bindtap="postIndex">
+      <image src="../../rsc/user.png" style="height: 23px; width: 23px;" />
+      <text>我的</text>
+    </view>
+  </view>
 </view>

@@ -1,8 +1,8 @@
 page{
-  background-color: #EBEBE3;
+  background-color: #F0F3FF;
 }
 swiper{
-  height: 500rpx;
+  height: 400rpx;
 }
 swiper-item{
   display: flex;
@@ -11,16 +11,8 @@ swiper-item{
 .img{
   height: 100%;
   width: 100%;
-}
-.intro-word{
-  margin-top: 15rpx;
-  display: flex;
-  justify-content: center;
-}
-.intro-word text{
-  font-weight: lighter;
-  font-size: medium;
-  color: #A79B9B;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
 }
 .container{
   
@@ -34,9 +26,8 @@ swiper-item{
   flex-direction: column;
   align-items: center;
 }
-.title{
-  color: #2EB266;
-  font-size: 60rpx;
+.container .title{
+  font-size: 50rpx;
   font-weight: bold;
   margin-left: 30rpx;
   justify-self: left;
@@ -48,33 +39,61 @@ swiper-item{
 .mid{
   display: flex;
   flex-direction: column;
-  margin: 10rpx;
+  margin: 20rpx;
 }
 .widget{
-  width: 300rpx;
+  width: 315rpx;
+  height: 413rpx;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: white;
-  padding: 20rpx;
   margin-top: 25rpx;
   border-radius: 25rpx;
-  box-shadow: 5rpx 10rpx 20rpx rgba(0, 0, 0, 0.15);
-}
-.widget text{
-  display: flex;
-  flex-direction: row;
-  font-size: 25rpx;
-  margin-left: 30rpx;
-  margin-top: 20rpx;
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.15);
 }
 .widget image{
-  height: 130rpx;
-  width: 130rpx;
-  border-radius: 25rpx;
+  height: 70%;
+  width: 100%;
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
 }
-
-.content .title{
-  font-weight: bold;
+.content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.content .tit{
+  font-weight: bolder;
   color:  black;
-  font-size: 30rpx;
+  font-size: 35rpx;
+}
+.content .cont{
+  color:  #4E4E4E;
+  font-size: 25rpx;
+  font-weight: bolder;
+}
+.bar{
+  width: 750rpx;
+  height: 162rpx;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0rpx -10rpx 20rpx rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 29rpx;
+  border-top-right-radius: 29rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.bar .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 45rpx;
+}
+.bar .item text{
+  font-size: x-small;
+  font-weight: bolder;
+  color: #929DB3;
 }

@@ -1,0 +1,20 @@
+<view class="container">
+  <view>
+    <image src="../../rsc/pic1.png" mode=""/>
+    <button bindtap="postLogin">立即注册</button>
+  </view>
+  <view class="bar">
+    <view class="item">
+      <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;"/>
+      <text>首页</text>
+    </view>
+    <view class="item">
+      <image src="../../rsc/plus-circle.png" style="height: 23px; width: 23px;"/>
+      <text>上传</text>
+    </view>
+    <view class="item">
+      <image src="../../rsc/user.png" style="height: 23px; width: 23px;"/>
+      <text>我的</text>
+    </view>
+  </view>
+</view>
