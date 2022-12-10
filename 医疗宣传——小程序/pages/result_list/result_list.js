@@ -35,6 +35,7 @@ Page({
       },
       method:'GET',
       success:function(res){
+        console.log(res)
         getApp().globalData.results=res.data.data.records
         that.setData({
           results: getApp().globalData.results

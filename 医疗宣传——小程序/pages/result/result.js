@@ -11,9 +11,6 @@ Page({
     host:'',
   },
   to_record:function(e){
-    console.log('e.target.dataset.cid---->', e.currentTarget.dataset['cid'])
-    console.log('e.target.dataset.uid---->', e.currentTarget.dataset['uid'])
-  
     wx.navigateTo({
       url: '/pages/report/report?cid=' + e.currentTarget.dataset['cid'] + '&uid=' + e.currentTarget.dataset['uid'],
     })
@@ -24,13 +21,10 @@ Page({
    */
   onLoad(option) {
     let index = option.index
-    console.log("index: ", index)
-    console.log(getApp().globalData.results[index])
     this.setData({
       userInfo:getApp().globalData.userInfo,
       results: getApp().globalData.results[index],
       host:getApp().globalData.host,
     })
-    console.log(this.data.results)
   },
 })

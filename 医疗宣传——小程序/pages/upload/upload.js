@@ -25,12 +25,10 @@ Page({
       sourceType: ['album'],
       sizeType:['compressed'],
       success(res){
-        console.log("111 "+res)
         that.setData({
           left:res.tempFiles[0].tempFilePath,
           chosenLeft:true
         })
-        console.log(that.data.left)
       }
     })
   },
@@ -48,7 +46,6 @@ Page({
       sourceType: ['album'],
       sizeType:['compressed'],
       success(res){
-        console.log(res)
         that.setData({
           up:res.tempFiles[0].tempFilePath,
           chosenUp:true
@@ -70,7 +67,6 @@ Page({
       sourceType: ['album'],
       sizeType:['compressed'],
       success(res){
-        console.log(res)
         that.setData({
           right:res.tempFiles[0].tempFilePath,
           chosenRight:true
@@ -98,29 +94,48 @@ Page({
   upLoad(){
     this.getTime()
     console.log(this.data.time)
-    wx.uploadFile({
-      filePath: this.data.left,
-      name: 'file',
-      url: getApp().globalData.host+'/record/uploadVideo/'+getApp().globalData.openid+'/'+this.data.time+'/left',
-      success(res){
-        console.log(res)
-      }
+    const that = this
+    const left=this.data.left
+    const up=this.data.up
+    const right=this.data.right
+    wx.login({
+      success: (res) => {
+        let code=res.code
+        wx.uploadFile({
+          filePath: left,
+          name: 'file',
+          url: getApp().globalData.host+'/record/uploadVideo/'+code+'/'+that.data.time+'/left',
+          success(res){
+            console.log(res)
+          }
+        })
+      },
     })
-    wx.uploadFile({
-      filePath: this.data.up,
-      name: 'file',
-      url: getApp().globalData.host+'/record/uploadVideo/'+getApp().globalData.openid+'/'+this.data.time+'/up',
-      success(res){
-        console.log(res)
-      }
+    wx.login({
+      success: (res) => {
+        let code=res.code
+        wx.uploadFile({
+          filePath: up,
+          name: 'file',
+          url: getApp().globalData.host+'/record/uploadVideo/'+code+'/'+that.data.time+'/up',
+          success(res){
+            console.log(res)
+          }
+        })
+      },
     })
-    wx.uploadFile({
-      filePath: this.data.right,
-      name: 'file',
-      url: getApp().globalData.host+'/record/uploadVideo/'+getApp().globalData.openid+'/'+this.data.time+'/right',
-      success(res){
-        console.log(res)
-      }
+    wx.login({
+      success: (res) => {
+        let code=res.code
+        wx.uploadFile({
+          filePath: right,
+          name: 'file',
+          url: getApp().globalData.host+'/record/uploadVideo/'+code+'/'+that.data.time+'/right',
+          success(res){
+            console.log(res)
+          }
+        })
+      },
     })
     this.deleLeft()
     this.deleUp()

@@ -12,9 +12,6 @@
       
     />
   </van-cell-group>
-  <van-uploader>
-    <van-button icon="photo" type="default">上传图片</van-button>
-  </van-uploader>
   <van-button type="default" bindtap="record">提交反馈</van-button>
 
 </view>

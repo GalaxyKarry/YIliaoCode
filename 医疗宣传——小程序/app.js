@@ -16,6 +16,9 @@ App({
           data:{
             code:res.code
           },
+          header: {
+            "Content-Type": "application/json"
+          },
           success(res){
             console.log(res)
             getApp().globalData.userInfo.nickName=res.data.data.user.username

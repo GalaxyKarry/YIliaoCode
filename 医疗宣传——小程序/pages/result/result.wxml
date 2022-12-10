@@ -36,7 +36,7 @@
   <video src="{{host}}/{{results.rightVideo}}" autoplay="{{true}}" muted="{{true}}"/>
   <text style="align-self: center;">右视角洗手视频</text>
   
-  <van-button class="but" type="primary" bindtap="to_record"  data-cid="{{ results.cid }} " data-uid="{{ results.uid }}">反馈</van-button>
+  <van-button class="but" type="primary" bindtap="to_record"  data-cid="{{ results.id }} " data-uid="{{ results.userId }}">反馈</van-button>
   <view style="padding: 50rpx;" />
 </view>
 
