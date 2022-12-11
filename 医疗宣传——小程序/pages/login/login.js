@@ -83,8 +83,6 @@ Page({
         })
       },
     })
-    wx.reLaunch({
-      url: '/pages/index/index',
-    })
+    wx.navigateBack
   }
 })

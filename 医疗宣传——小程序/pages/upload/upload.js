@@ -11,7 +11,7 @@ Page({
   },
   onLoad(event){
     this.setData({
-      hasUserInfo:getApp().globalData.hasUserInfo,
+      hasUserInfo: getApp().globalData.hasUserInfo,
     })
   },
   onShow(event){

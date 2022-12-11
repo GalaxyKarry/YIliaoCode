@@ -53,13 +53,15 @@
     <button bindtap="postLogin">立即注册</button>
   </view>
 
+  <view style="padding-bottom: 25%;"></view>
+  
   <view class="bar">
     <view class="item">
       <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;" bindtap="postIntro" />
       <text>首页</text>
     </view>
     <view class="item">
-      <image src="../../rsc/plus-circle.png" style="height: 23px; width: 23px;" />
+      <image src="../../rsc/上传填充.png" style="height: 23px; width: 23px;" />
       <text>上传</text>
     </view>
     <view class="item">

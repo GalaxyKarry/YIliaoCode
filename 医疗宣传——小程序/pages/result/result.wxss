@@ -1,89 +1,83 @@
 page{
-  background-color: #F8F8F8;
+  background-color: #F0F3FF;
   height: 100%;
 }
-.container{ 
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  margin-bottom: 80rpx;
+}
+.title0{
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.subTitle{
+  font-weight: bolder;
+  color: #929DB3;
+}
+.container0{ 
   display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.container video{
+.container0 video{
   margin-top: 50rpx;
 }
 
-.outcome1{
-  border: #8BC34A solid 10rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 350rpx;
-  width: 350rpx;
-  border-radius: 500rpx;
-}
-.outcome1 .result1{
-  font-size: 35px;
-  color: #8BC34A;
-  font-weight: bold;
-}
-
-.outcome0{
-  border: red solid 10rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 350rpx;
-  width: 350rpx;
-  border-radius: 500rpx;
-}
-.outcome0 .result0{
-  font-size: 35px;
-  color: red;
-  font-weight: bold;
-}
 
 .outcome{
-  border: gray solid 10rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 350rpx;
-  width: 350rpx;
-  border-radius: 500rpx;
+  margin-bottom: 150rpx;
 }
 .outcome .result{
   font-size: 35px;
-  color: gray;
+  color: #786FD2;
   font-weight: bold;
 }
-
 
 .info{
   display: flex;
   flex-direction: column;
-  margin-top: 150rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 20rpx;
+  background-color: white;
+  border-radius: 30rpx;
+  width: 90%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
 }
-.info .item{
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items: center;
-  margin: 15rpx;
+.info video{
+  align-self: center; 
+  font-size: larger; 
+  font-weight: bolder; 
+  margin-bottom: 30rpx; 
+  margin-top: 30rpx;
+  align-self: center;
+  border-radius: 30rpx;
 }
-.item .title{
-  font-size: 20px;
-  color: black;
+.title{
+  font-size: 40rpx;
+  color: #786FD2;
   font-weight: bolder;
+  margin-left: 30rpx;
 }
-.item .content{
+.item{
   font-size: 18px;
-  color: black;
-  font-weight: normal;
+  color: #929DB3;
+  font-weight: bolder;
+  margin-left: 30rpx;
 }
 .but{
-  margin-top: 50rpx;
+  background-color: #786FD2;
+  color: white;
+  margin-top: 100rpx;
+  width: 283rpx;
+  height: 81rpx;
+  border-radius: 17rpx;
+  font-size: 35rpx;
 }

@@ -1,43 +1,39 @@
-<view class="container">
-    <view class="text">
-      <text>检测列表</text>
-    </view>
-    <view style="height: 30rpx;">
-      
-    </view>
-    <van-dropdown-menu>
+<view>
+  <view class="container">
+    <text class="title">检测结果</text>
+    <text class="subTitle">查看您的历史检测结果</text>
+  </view>
+
+  <!-- <van-dropdown-menu>
         <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onSwitch1Change" />
-    </van-dropdown-menu>
-     
-    <view class="result-list" wx:for="{{results}}" wx:key="index" >
-          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{item.isPass == value1 && value1 != 2}}" >
-            <view class="mid">
-              <text class="text1">检测时间：{{item.timestamp}}</text>
-              <text>检测地点：{{item.place}}</text>
-              
-              <text wx:if="{{item.isPass==0}}">是否合格：合格</text>
-              <text wx:if="{{item.isPass==1}}">是否合格：不合格</text>
-              <text wx:if="{{item.isPass==-1}}">检测中...</text>
-            </view>
-            <view>
-              <van-icon name="arrow"/>
-            </view>
-          </view>
+    </van-dropdown-menu> -->
 
-          <view class="result" bindtap="post_result" data-index="{{index}}"wx:if="{{value1 == 2}}">
-            <view class="mid">
-              <text class="text1">检测时间：{{item.timestamp}}</text>
-              <text>检测地点：{{item.place}}</text>
-              
-              <text wx:if="{{item.isPass==0}}">是否合格：合格</text>
-              <text wx:if="{{item.isPass==1}}">是否合格：不合格</text>
-              <text wx:if="{{item.isPass==-1}}">检测中...</text>
-            </view>
-            <view>
-              <van-icon name="arrow"/>
-            </view>
-          </view>
-          
+  <view class="result-list" wx:for="{{results}}" wx:key="index">
+    <view class="result0" bindtap="post_result" data-index="{{index}}" wx:if="{{value1 == 2 && item.isPass == -1}}">
+      <view class="mid">
+        <text class="text1" wx:if="{{item.isPass==0}}">合格</text>
+        <text class="text1" wx:if="{{item.isPass==1}}">不合格</text>
+        <text class="text1" wx:if="{{item.isPass==-1}}">检测中...</text>
+        <text style="color: #62616A;">{{item.timestamp}}</text>
+        <text style="color: #62616A;">{{item.place}}</text>
+      </view>
+      <image wx:if="{{item.isPass==0}}" src="../../rsc/不合格.png" style="width: 230rpx; height: 220rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
+      <image wx:if="{{item.isPass==1}}" src="../../rsc/合格.png" style="width: 215rpx; height: 200rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
+      <image wx:if="{{item.isPass==-1}}" src="../../rsc/检测中.png" style="width: 280rpx; height: 200rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
     </view>
 
+    <view class="result" bindtap="post_result" data-index="{{index}}" wx:if="{{value1 == 2 && item.isPass != -1}}">
+      <view class="mid">
+        <text class="text1" wx:if="{{item.isPass==0}}">合格</text>
+        <text class="text1" wx:if="{{item.isPass==1}}">不合格</text>
+        <text class="text1" wx:if="{{item.isPass==-1}}">检测中...</text>
+        <text style="color: #62616A;">{{item.timestamp}}</text>
+        <text style="color: #62616A;">{{item.place}}</text>
+      </view>
+      <image wx:if="{{item.isPass==0}}" src="../../rsc/不合格.png" style="width: 230rpx; height: 220rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
+      <image wx:if="{{item.isPass==1}}" src="../../rsc/合格.png" style="width: 215rpx; height: 200rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
+      <image wx:if="{{item.isPass==-1}}" src="../../rsc/检测中.png" style="width: 280rpx; height: 200rpx; margin-right: 50rpx; margin-top: 40rpx;"/>
+    </view>
+  </view>
+  <view style="padding: 10%;"/>
 </view>

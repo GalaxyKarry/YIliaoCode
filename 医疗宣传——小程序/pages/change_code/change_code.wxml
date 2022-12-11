@@ -1,31 +1,22 @@
-<view class="container">
-  <text>修改密码</text>
-  <van-cell-group class="input">
-    <van-field
-      model:value="{{ oldPassword }}"
-      clearable
-      type="password"
-      label="旧密码"
-      placeholder="请输入旧密码"
-    />
-  </van-cell-group>
-  <van-cell-group class="input">
-    <van-field
-      model:value="{{ newPassword }}"
-      clearable
-      type="password"
-      label="新密码"
-      placeholder="请输入新密码"
-    />
-    <van-field class="input"
-      model:value="{{ confirmedPassword }}"
-      type="password"
-      label="确认新密码"
-      placeholder="请再次输入新密码"
-    />
-  </van-cell-group>
-  <view class="button">
-    <van-button round type="default" bindtap="return">确认修改</van-button>
+<view>
+  <view class="container">
+    <text class="title">修改密码</text>
+  </view>
+  <view class="inputs">
+    <form bindsubmit="return">
+      <view class="item">
+        <image src="../../rsc/key.png" />
+        <input class="weui-input" placeholder="请输入旧密码" name="passwordOld" password />
+      </view>
+      <view class="item">
+        <image src="../../rsc/key.png" />
+        <input class="weui-input" placeholder="请输入新密码" name="password" password />
+      </view>
+      <view class="item">
+        <image src="../../rsc/key.png" />
+        <input class="weui-input" placeholder="请确认新密码" name="passwordConf" password />
+      </view>
+      <button form-type="submit">确认修改</button>
+    </form>
   </view>
 </view>
-

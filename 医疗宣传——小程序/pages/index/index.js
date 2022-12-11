@@ -5,7 +5,6 @@ Page({
   data: {
     userInfo:{},
     hasUserInfo:false,
-    active: "index",
   },
   // 事件处理函数
   onLoad() {
@@ -13,24 +12,33 @@ Page({
       userInfo: getApp().globalData.userInfo,
       hasUserInfo: getApp().globalData.hasUserInfo,
     })
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-  },
-  onClick(event) {
-    this.setData({active:event.detail});
-    wx.reLaunch({
-      url: '/pages/'+event.detail+'/'+event.detail,
-    })
   },
   onShow(){
     wx.hideHomeButton();
   },
-  postLogin(){
+  postIntro(){
     wx.reLaunch({
+      url: '/pages/intro/intro',
+    })
+  },
+  postUpload(){
+    wx.reLaunch({
+      url: '/pages/upload/upload',
+    })
+  },
+  postLogin(){
+    wx.navigateTo({
       url: '/pages/login/login',
+    })
+  },
+  postResults(){
+    wx.navigateTo({
+      url: '/pages/result_list/result_list',
+    })
+  },
+  postChangeCode(){
+    wx.navigateTo({
+      url: '/pages/change_code/change_code',
     })
   }
 })

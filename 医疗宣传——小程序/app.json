@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/intro/intro",
+    "pages/login/login",
     "pages/test/test",
     "pages/upload/upload",
     
@@ -9,10 +10,7 @@
     "pages/input_face/input_face",
     "pages/change_code/change_code",
     "pages/report/report",
-    "pages/result/result",
-    "pages/login/login"
-    
-    
+    "pages/result/result"
   ],
   "window":{
     "backgroundTextStyle":"light",

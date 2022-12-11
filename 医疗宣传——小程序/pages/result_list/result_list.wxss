@@ -1,25 +1,22 @@
+page{
+  background-color: #F0F3FF;
+  height: 100%;
+}
 .container{
-  background: #F8F8F8; 
-  height: 1444rpx; 
-  display: block; 
-  box-sizing: border-box; 
-  left: 0rpx; 
-  top: 0rpx
-}
-.text{
-  background-color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  margin-left: 30rpx;
+  margin-bottom: 30rpx;
 }
-.text text{
-  font-size: 35px;
-  color: black;
-  font-weight: normal;
+.title{
+  font-weight: bolder;
+  font-size: xx-large;
 }
-.result-item{
-  margin-top: 100rpx;
+.subTitle{
+  font-weight: bolder;
+  color: #929DB3;
 }
+
 .result-list{
   display: flex;
   flex-direction: row;
@@ -28,27 +25,33 @@
 }
 .result{
   margin-top: 50rpx;
-  background-color: white;
-  padding: 30rpx;
+  background-color: #BBB7E8;
   border-radius: 30rpx;
-  width: 85%;
-  border: solid #38C0AA;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5rpx 10rpx 20rpx rgba(56, 192, 170, 0.15);
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.20);
+}
+.result0{
+  margin-top: 50rpx;
+  background-color: #DDDBFF;
+  border-radius: 30rpx;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 10rpx 10rpx 20rpx rgba(0, 0, 0, 0.20);
 }
 
-.result van-icon{
-  margin-left: 65%;
-}
 .mid{
   display: flex;
   flex-direction: column;
+  margin-left: 50rpx;
 }
 .text1{
-  color: #38C0AA;
-  font-size: large;
-  font-weight: bold;
+  font-size: 40rpx;
+  font-weight: bolder;
 }

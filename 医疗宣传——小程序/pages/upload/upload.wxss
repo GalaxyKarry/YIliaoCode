@@ -6,6 +6,7 @@ page{
   display: flex;
   flex-direction: column;
   margin-left: 50rpx;
+  margin-bottom: 30rpx;
 }
 .title{
   font-weight: bolder;

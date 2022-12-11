@@ -37,7 +37,7 @@
 
   <view class="bar">
     <view class="item">
-      <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;" />
+      <image src="../../rsc/首页填充.png" style="height: 23px; width: 23px;" />
       <text>首页</text>
     </view>
     <view class="item" bindtap="postUpload">

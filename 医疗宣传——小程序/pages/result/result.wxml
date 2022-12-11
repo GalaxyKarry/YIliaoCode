@@ -1,42 +1,56 @@
 <view class="container">
-  <view class="outcome1" wx:if="{{results.isPass==0}}">
+  <text class="title0">检测结果</text>
+</view>
+<view class="container0">
+
+  <!-- <view class="outcome1" wx:if="{{results.isPass==0}}">
     <text class="result1">合格</text>
   </view>
   <view class="outcome0" wx:if="{{results.isPass==1}}">
     <text class="result0">不合格</text>
+  </view> -->
+  <view class="outcome">
+    <block wx:if="{{results.isPass==-1}}">
+      <image src="../../rsc/loader.png" style="width: 143px; height: 143px;" mode="" />
+      <text class="result">检测中</text>
+    </block>
+    <block wx:if="{{results.isPass==1}}">
+      <image src="../../rsc/slash.png" style="width: 143px; height: 143px;" mode="" />
+      <text class="result">不合格</text>
+    </block>
+    <block wx:if="{{results.isPass==0}}">
+      <image src="../../rsc/c" style="width: 143px; height: 143px;" mode="" />
+      <text class="result">合格</text>
+    </block>
   </view>
-  <view class="outcome" wx:if="{{results.isPass==-1}}">
-    <text class="result">检测中...</text>
+
+  <view class="info">
+    <text class="title">基本信息</text>
+    <text class="item">昵称：{{userInfo.nickName}}</text>
+    <text class="item">检测时间：{{results.timestamp}}</text>
+    <text class="item">检测地点：{{results.place}}</text>
   </view>
   <view class="info">
-    <view class="item">
-      <text class="title">检测id：</text>
-      <text class="content">{{userInfo.nickName}}</text>
-    </view>
-
-    <view class="item">
-      <text class="title">检测时间：</text>
-      <text class="content">{{results.timestamp}}</text>
-    </view>
-
-    <view class="item">
+    <text class="title">洗手建议</text>
+    <text class="item">{{results.proposal}}</text>
+  </view>
+  <view class="info">
+    <text class="title">相关视频</text>
+    <video src="{{host}}/{{results.leftVideo}}" autoplay="{{true}}" muted="{{true}}" />
+    <text style="align-self: center; font-weight: bolder; font-size: large;">左视角洗手视频</text>
+    <video src="{{host}}/{{results.upVideo}}" autoplay="{{true}}" muted="{{true}}" />
+    <text style="align-self: center; font-weight: bolder; font-size: large;">俯视角洗手视频</text>
+    <video src="{{host}}/{{results.rightVideo}}" autoplay="{{true}}" muted="{{true}}" />
+    <text style="align-self: center; font-weight: bolder; font-size: large;">右视角洗手视频</text>
+  </view>
+  <!-- <view class="item">
       <text class="title">建议：</text>
       <text class="content">{{results.proposal}}</text>
     </view>
 
     <view class="item">
       <text class="title">相关视频：</text>
-    </view>
-  </view>
-
-  <video src="{{host}}/{{results.leftVideo}}" autoplay="{{true}}" muted="{{true}}"/>
-  <text style="align-self: center;">左视角洗手视频</text>
-  <video src="{{host}}/{{results.upVideo}}" autoplay="{{true}}" muted="{{true}}"/>
-  <text style="align-self: center;">俯视角洗手视频</text>
-  <video src="{{host}}/{{results.rightVideo}}" autoplay="{{true}}" muted="{{true}}"/>
-  <text style="align-self: center;">右视角洗手视频</text>
-  
-  <van-button class="but" type="primary" bindtap="to_record"  data-cid="{{ results.id }} " data-uid="{{ results.userId }}">反馈</van-button>
+    </view> -->
+  <button class="but" bindtap="to_record" data-cid="{{results.id}} " data-uid="{{ results.userId }}">反馈</button>
   <view style="padding: 50rpx;" />
 </view>
-

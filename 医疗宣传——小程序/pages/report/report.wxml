@@ -1,17 +1,13 @@
-<view class="container" >
-  <text class="text">反馈</text>
-
-  <van-cell-group>
-    <van-field
-      model:value="{{ contect }}"
-      type="textarea"
-      autosize="{{tmp}}"
-      placeholder="请输入您的反馈内容"
-      border="{{ true }}"
-      bind:change="onChange"
-      
-    />
-  </van-cell-group>
-  <van-button type="default" bindtap="record">提交反馈</van-button>
+<view class="container0">
+  <text class="title">提交反馈</text>
+  <text class="subTitle">您的反馈对我们至关重要</text>
+</view>
+<view>
+  <view class="container">
+    <van-cell-group>
+      <van-field model:value="{{ contect }}" type="textarea" autosize="{{tmp}}" placeholder="请输入您的反馈内容" border="{{ true }}" bind:change="onChange" />
+    </van-cell-group>
+  </view>
+  <button class="button" bindtap="record">提交</button>
 
 </view>

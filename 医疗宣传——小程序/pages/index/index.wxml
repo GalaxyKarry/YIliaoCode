@@ -1,37 +1,49 @@
-<view style="width: 750rpx; height: 1336rpx; display: block; box-sizing: border-box">
-  <block wx:if="{{!hasUserInfo}}">
-    <view>
-      <button style="width: 200rpx; align-self: center;" type="primary" bindtap="postLogin">登录</button>
-    </view>
-  </block>
-  <block wx:else>
+<view>
+  <view wx:if="{{hasUserInfo==true}}">
     <view class="info">
       <image src="{{userInfo.avatarUrl}}"></image>
-      <view class="text">
-        <text class="name">昵称：{{userInfo.nickName}}</text>
-        <view class="tele">
-          <text>电话：{{userInfo.telephone}}</text>
-        </view>
+      <text class="name">{{userInfo.nickName}}</text>
+      <view class="tele">
+        <text>电话：{{userInfo.telephone}}</text>
       </view>
     </view>
-  </block>
-
-  <view class="view">
-    <van-cell-group inset style="position: relative; left: 0rpx; top: 100rpx">
-      <van-cell center clickable title="检测结果" is-link icon="completed" size="large" url="/pages/result_list/result_list" />
-    </van-cell-group>
-    <van-cell-group inset style="position: relative; left: 0rpx; top: 150rpx">
-      <van-cell center clickable title="录入人脸" is-link icon="smile-o" size="large" url="/pages/input_face/input_face" />
-    </van-cell-group>
-    <van-cell-group inset style="position: relative; left: 0rpx; top: 200rpx">
-      <van-cell center cilckable title="修改密码" is-link icon="edit" size="large" url="/pages/change_code/change_code" />
-    </van-cell-group>
+    <view class="items">
+      <view class="item0" bindtap="postResults">
+        <view class="content">
+          <text class="title">检测报告</text>
+          <text class="subTitle">历史洗手检测报告</text>
+        </view>
+        <image src="../../rsc/组件 1.png" style="width: 357rpx; height: 367rpx; margin-left: 10%;"/>
+      </view>
+      <view class="item0" bindtap="postChangeCode">
+        <view class="content">
+          <text class="title">修改密码</text>
+        </view>
+        <image src="../../rsc/组件2.png" style="width: 163rpx; height: 119rpx; margin-left: 35%; margin-top: 5%;"/>
+      </view>
+    </view>
   </view>
 
-  <van-tabbar active="{{ active }}" bind:change="onClick" active-color="#2EB266">
-    <van-tabbar-item icon="home-o" name="intro">首页</van-tabbar-item>
-    <van-tabbar-item icon="search" name="upload">上传</van-tabbar-item>
-    <van-tabbar-item icon="user-o" name="index">我</van-tabbar-item>
-  </van-tabbar>
+  <view wx:else="{{hasUserInfo!=true}}" class="shield">
+    <image src="../../rsc/pic1.png" mode="" />
+    <button bindtap="postLogin">立即注册</button>
+  </view>
+
+  <view style="padding-bottom: 25%;"></view>
+
+  <view class="bar">
+    <view class="item" bindtap="postIntro">
+      <image src="../../rsc/Hospital.png" style="height: 23px; width: 23px;" />
+      <text>首页</text>
+    </view>
+    <view class="item" bindtap="postUpload">
+      <image src="../../rsc/plus-circle.png" style="height: 23px; width: 23px;" />
+      <text>上传</text>
+    </view>
+    <view class="item">
+      <image src="../../rsc/我的填充.png" style="height: 23px; width: 23px;" />
+      <text>我的</text>
+    </view>
+  </view>
 
 </view>
